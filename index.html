@@ -261,6 +261,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/13/Android-坑神/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/13/Android-坑神/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -282,15 +289,10 @@
       
         
           
-            <ul>
-<li><h4 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h4><p>  在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
+            <h3 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h3><p>在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_LOAD_MORE = <span class="number">0</span>; <span class="comment">// 切记 ViewType 从 0 开始</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_NORMAL = <span class="number">1</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><h4 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h4><p>  忘了在 initView() 中调用</p>
+<h3 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h3><p>忘了在 initView() 中调用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mViewPager.setOnPageChangeListener(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
-</li>
-<li></li>
-</ul>
 
           
         
@@ -362,6 +364,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/13/Android-学习笔记、摘要/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/13/Android-学习笔记、摘要/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -455,6 +464,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/13/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/13/hello-world/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -569,6 +585,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mapledev" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zgh8126" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xznn" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
           
         </div>
 
@@ -686,9 +731,30 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mapledev"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
 
 
 

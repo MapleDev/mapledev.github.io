@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="ListView中使用type需要注意的东西  在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
-12public static final int VIEWTYPE_LOAD_MORE = 0">
+<meta name="description" content="ListView中使用type需要注意的东西在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
+12public static final int VIEWTYPE_LOAD_MORE = 0; /">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 坑神">
 <meta property="og:url" content="http://yoursite.com/2016/07/13/Android-坑神/index.html">
 <meta property="og:site_name" content="Maple Blog">
-<meta property="og:description" content="ListView中使用type需要注意的东西  在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
-12public static final int VIEWTYPE_LOAD_MORE = 0">
-<meta property="og:updated_time" content="2016-07-13T12:57:56.315Z">
+<meta property="og:description" content="ListView中使用type需要注意的东西在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
+12public static final int VIEWTYPE_LOAD_MORE = 0; /">
+<meta property="og:updated_time" content="2016-07-13T13:15:38.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 坑神">
-<meta name="twitter:description" content="ListView中使用type需要注意的东西  在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
-12public static final int VIEWTYPE_LOAD_MORE = 0">
+<meta name="twitter:description" content="ListView中使用type需要注意的东西在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
+12public static final int VIEWTYPE_LOAD_MORE = 0; /">
 
 
 
@@ -260,6 +260,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/13/Android-坑神/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/13/Android-坑神/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -279,15 +286,10 @@
       
 
       
-        <ul>
-<li><h4 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h4><p>  在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
+        <h3 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h3><p>在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_LOAD_MORE = <span class="number">0</span>; <span class="comment">// 切记 ViewType 从 0 开始</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_NORMAL = <span class="number">1</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><h4 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h4><p>  忘了在 initView() 中调用</p>
+<h3 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h3><p>忘了在 initView() 中调用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mViewPager.setOnPageChangeListener(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
-</li>
-<li></li>
-</ul>
 
       
     </div>
@@ -344,6 +346,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/13/Android-坑神/"
+           data-title="Android 坑神" data-url="http://yoursite.com/2016/07/13/Android-坑神/">
+      </div>
     
   </div>
 
@@ -402,6 +408,35 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mapledev" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zgh8126" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xznn" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
         </div>
 
         
@@ -419,7 +454,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ListView中使用type需要注意的东西"><span class="nav-number">1.</span> <span class="nav-text">ListView中使用type需要注意的东西</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewpager-onPageSelected没有执行"><span class="nav-number">2.</span> <span class="nav-text">viewpager onPageSelected没有执行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView中使用type需要注意的东西"><span class="nav-number">1.</span> <span class="nav-text">ListView中使用type需要注意的东西</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#viewpager-onPageSelected没有执行"><span class="nav-number">2.</span> <span class="nav-text">viewpager onPageSelected没有执行</span></a></li></ol></div>
             
           </div>
         </section>
@@ -533,9 +568,30 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mapledev"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
 
 
 
