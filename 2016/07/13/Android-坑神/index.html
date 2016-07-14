@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Maple Blog">
 <meta property="og:description" content="ListView中使用type需要注意的东西在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
 12public static final int VIEWTYPE_LOAD_MORE = 0; /">
-<meta property="og:updated_time" content="2016-07-13T13:15:38.622Z">
+<meta property="og:updated_time" content="2016-07-13T15:52:04.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 坑神">
 <meta name="twitter:description" content="ListView中使用type需要注意的东西在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常
@@ -286,9 +286,9 @@
       
 
       
-        <h3 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h3><p>在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
+        <h2 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h2><p>在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_LOAD_MORE = <span class="number">0</span>; <span class="comment">// 切记 ViewType 从 0 开始</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_NORMAL = <span class="number">1</span>;</div></pre></td></tr></table></figure>
-<h3 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h3><p>忘了在 initView() 中调用</p>
+<h2 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h2><p>忘了在 initView() 中调用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mViewPager.setOnPageChangeListener(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
 
       
@@ -310,6 +310,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
@@ -322,6 +328,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/14/MySQL-免安装版-配置方法/" rel="prev" title="MySQL 免安装版 配置方法">
+                MySQL 免安装版 配置方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -393,13 +403,20 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -430,7 +447,7 @@
               <span class="links-of-author-item">
                 <a href="http://weibo.com/xznn" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-weibo"></i>
                   
                   微博
                 </a>
@@ -454,7 +471,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView中使用type需要注意的东西"><span class="nav-number">1.</span> <span class="nav-text">ListView中使用type需要注意的东西</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#viewpager-onPageSelected没有执行"><span class="nav-number">2.</span> <span class="nav-text">viewpager onPageSelected没有执行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView中使用type需要注意的东西"><span class="nav-number">1.</span> <span class="nav-text">ListView中使用type需要注意的东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewpager-onPageSelected没有执行"><span class="nav-number">2.</span> <span class="nav-text">viewpager onPageSelected没有执行</span></a></li></ol></div>
             
           </div>
         </section>
