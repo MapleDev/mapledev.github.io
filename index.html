@@ -190,12 +190,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            标签
+            分类
           </a>
         </li>
       
@@ -314,13 +314,11 @@
 <p> 1）从控制台进入到MySQL解压目录下的 bin 目录下：</p>
 <p> 2）输入服务安装命令：<br><code>mysqld install MySQL --defaults-file=&quot;d:\MapleDev\DevProgram\mysql-5.7.13-winx64\my.ini&quot;</code></p>
 <p> 安装成功后会提示服务安装成功。</p>
-<p> #移除服务命令为：<code>mysqld remove</code></p>
+<p> <strong>移除</strong>服务命令为：<code>mysqld remove</code></p>
 </li>
 <li><p>启动MySQL服务</p>
 <p> 启动服务命令为：<code>net start mysql</code></p>
 </li>
-</ol>
-<ol>
 <li><p>修改 root 账号的密码</p>
 <p> 刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：root</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">c:&gt;mysql –uroot</div><div class="line"></div><div class="line">mysql&gt;show databases;</div><div class="line"></div><div class="line">mysql&gt;use mysql;</div><div class="line"></div><div class="line">mysql&gt;UPDATE user SET password=PASSWORD(&quot;root&quot;) WHERE user=&apos;root&apos;;</div><div class="line"></div><div class="line">mysql&gt;FLUSH PRIVILEGES;</div><div class="line"></div><div class="line">mysql&gt;QUIT</div></pre></td></tr></table></figure>
@@ -407,6 +405,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">Testing</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -727,13 +744,20 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">2</span>
+              
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
-              </a>
+              
             </div>
           
 
