@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Maple Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mapledev.github.io/"/>
+  <updated>2016-07-17T09:21:25.297Z</updated>
+  <id>https://mapledev.github.io/</id>
+  
+  <author>
+    <name>Maple</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>泛型的使用（小白向）</title>
+    <link href="https://mapledev.github.io/2016/07/17/%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E5%B0%8F%E7%99%BD%E5%90%91%EF%BC%89/"/>
+    <id>https://mapledev.github.io/2016/07/17/泛型的使用（小白向）/</id>
+    <published>2016-07-17T03:34:43.000Z</published>
+    <updated>2016-07-17T09:21:25.297Z</updated>
+    
+    <content type="html">&lt;p&gt;说起泛型，小白大多是一脸懵逼。其实引用我 Java 的启蒙老师马士兵的话&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;豆芽菜长一房高，它也是根菜！咋们把他摘（二声）了就不行了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;泛型从 Java 1.5 引进，麻麻再也不用担心我 &lt;strong&gt; 强转类型 &lt;/strong&gt; 了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。&lt;/p&gt;
+&lt;p&gt;泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。&lt;/p&gt;
+&lt;p&gt;在这我就说说泛型怎么吃好了 &amp;gt;_&amp;lt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;先看看不用泛型会怎样：&lt;br&gt;ParamTypeDemo.java&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;IParamType&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String msg)&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ParamTypeDemo&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;IParamType&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String msg)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(msg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;test 方法：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ParamTypeDemoTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;testPrint&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; Exception &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ParamTypeDemo paramTypeString = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ParamTypeDemo();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        paramTypeString.print(&lt;span class=&quot;string&quot;&gt;&quot;我是泛型，你会爱我么？&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可以看到，代码比较简单。但局限性很大，只能传 String 类型，如果相传个 Date、List··· n种类型，只能写 n 中 这样无聊的代码了。。。大家应该都不想的吧。&lt;/p&gt;
+&lt;p&gt;不过现在有了泛型是这样的：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 注意 T 的位置&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;IParamType&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;&amp;gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(T msg)&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ParamTypeDemo&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;&amp;gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;IParamType&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(T msg)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(msg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//    @Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//    public void print(String msg) &amp;#123;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//        System.out.print(msg);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//    &amp;#125;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;test 方法：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ParamTypeDemoTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;testPrint&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; Exception &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 打印 String 没问题&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ParamTypeDemo&amp;lt;String&amp;gt; paramTypeString = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ParamTypeDemo&amp;lt;&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        paramTypeString.print(&lt;span class=&quot;string&quot;&gt;&quot;我是泛型，你会爱我么？&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 打印 Date 没问题&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ParamTypeDemo&amp;lt;java.util.Date&amp;gt; paramTypeDate = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ParamTypeDemo&amp;lt;&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        paramTypeDate.print(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; java.util.Date(System.currentTimeMillis()));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;// 我觉得还可以打印 10086 冇问题&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Tips&quot;&gt;&lt;a href=&quot;#Tips&quot; class=&quot;headerlink&quot; title=&quot;Tips:&quot;&gt;&lt;/a&gt;Tips:&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;泛型的 E 文是 Parameter Type （参数类型），大家可以将 &lt;strong&gt; &lt;code&gt;XXType&amp;lt;T&amp;gt;&lt;/code&gt; &lt;/strong&gt; 看成一个&lt;strong&gt;整体类型&lt;/strong&gt;，类似于数组类型 &lt;code&gt;int[]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;因为泛型可以看成是类型的一部分，所以她也拥有着类型的&lt;strong&gt;继承体系&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;注意泛型继承到最后的类，就不能写虚的 T 了，需指定一个 Type 放置于 宿主类型 &lt;code&gt;XXType&amp;lt;&amp;gt;&lt;/code&gt; 的&amp;lt;&amp;gt;之中。ps：如果不写，默认按照 Object 类型处理了。 &lt;/li&gt;
+&lt;li&gt;以上代码Demo 是个玩具代码，有空补一个 泛型应用在 JSON 解析时的栗子。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;说起泛型，小白大多是一脸懵逼。其实引用我 Java 的启蒙老师马士兵的话&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;豆芽菜长一房高，它也是根菜！咋们把他摘（二声）了就不行了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;泛型从 Java 1.5 引进，麻麻再也不用担心我 &lt;strong&gt; 强转类型 &lt;/strong&gt; 了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。&lt;/p&gt;
+&lt;p&gt;泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。&lt;/p&gt;
+&lt;p&gt;在这我就说说泛型怎么吃好了 &amp;gt;_&amp;lt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://mapledev.github.io/categories/Java/"/>
+    
+    
+      <category term="泛型" scheme="https://mapledev.github.io/tags/%E6%B3%9B%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 免安装版 配置方法</title>
+    <link href="https://mapledev.github.io/2016/07/14/MySQL-%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88-%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/"/>
+    <id>https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/</id>
+    <published>2016-07-14T06:33:13.000Z</published>
+    <updated>2016-07-16T15:53:46.244Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;安装步骤：&quot;&gt;&lt;a href=&quot;#安装步骤：&quot; class=&quot;headerlink&quot; title=&quot;安装步骤：&quot;&gt;&lt;/a&gt;安装步骤：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下载MySQL Community Server &lt;a href=&quot;http://dev.mysql.com/downloads/mysql/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dev.mysql.com/downloads/mysql/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;解压MySQL压缩包&lt;/p&gt;
+&lt;p&gt;   将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\MapleDev\DevProgram\mysql-5.7.13-winx64
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   将解压目录下默认文件 my-default.ini 拷贝一份，改名 my.ini&lt;br&gt;   复制下面的配置信息到 my.ini 保存&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[client]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;port=3306&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;default-character-set=utf8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[mysqld]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;port=3306&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;character_set_server=utf8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;default-storage-engine=innodb&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# unzip dir &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;basedir=D:\MapleDev\DevProgram\mysql-5.7.13-winx64&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# unzip dir data dir&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;datadir=D:\MapleDev\DevProgram\mysql-5.7.13-winx64\data&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[WinMySQLAdmin]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;D:\MapleDev\DevProgram\mysql-5.7.13-winx64\bin\mysqld.exe&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;添加环境变量&lt;/p&gt;
+&lt;p&gt; 操作如下：&lt;/p&gt;
+&lt;p&gt; 1）右键单击我的电脑-&amp;gt;属性-&amp;gt;高级系统设置(高级)-&amp;gt;环境变量&lt;/p&gt;
+&lt;p&gt;   点击系统变量下的新建按钮&lt;/p&gt;
+&lt;p&gt;   输入变量名：&lt;code&gt;MYSQL_HOME&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;   输入变量值：&lt;code&gt;D:\MapleDev\DevProgram\mysql-5.7.13-winx64&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;   #即为mysql的自定义解压目录。&lt;/p&gt;
+&lt;p&gt; 2）选择系统变量中的Path&lt;/p&gt;
+&lt;p&gt; 点击编辑按钮&lt;/p&gt;
+&lt;p&gt;   在变量值中添加变量值：&lt;code&gt;%MYSQL_HOME%\bin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;   注意是在原有变量值后面加上这个变量，用;隔开，不能删除原来的变量值，&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将mysql注册为windows系统服务&lt;/p&gt;
+&lt;p&gt; 1）从控制台进入到MySQL解压目录下的 bin 目录下：&lt;/p&gt;
+&lt;p&gt; 2）输入服务安装命令：&lt;br&gt;&lt;code&gt;mysqld install MySQL --defaults-file=&amp;quot;d:\MapleDev\DevProgram\mysql-5.7.13-winx64\my.ini&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt; 安装成功后会提示服务安装成功。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;移除&lt;/strong&gt;服务命令为：&lt;code&gt;mysqld remove&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;启动MySQL服务&lt;/p&gt;
+&lt;p&gt; 启动服务命令为：&lt;code&gt;net start mysql&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改 root 账号的密码&lt;/p&gt;
+&lt;p&gt; 刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：root&lt;/p&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;c:&amp;gt;mysql –uroot&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;show databases;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;use mysql;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;UPDATE user SET password=PASSWORD(&amp;quot;root&amp;quot;) WHERE user=&amp;apos;root&amp;apos;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;FLUSH PRIVILEGES;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;QUIT&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MySQL控制台快捷方式建立:&lt;/p&gt;
+&lt;p&gt; 1）桌面右键-&amp;gt;新建-&amp;gt;快捷方式-&amp;gt;对象位置输入：&lt;code&gt;C:\Windows\System32\cmd.exe&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt; 快捷方式名称自己定义，确定，快捷方式建立成功&lt;/p&gt;
+&lt;p&gt; 2）右键单击刚才建立的快捷方式-&amp;gt;属性-&amp;gt;把目标一栏修改成MySQL启动参数：&lt;/p&gt;
+&lt;p&gt; C:\Windows\System32\cmd.exe “D:\MapleDev\DevProgram\mysql-5.7.13-winx64\bin” /k mysql -uroot -proot mysql&lt;/p&gt;
+&lt;p&gt; &lt;em&gt;解释:CMD路径 “MySQL路径bin目录” /k mysql -u用户名 -p密码 [数据库名]&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt; 3）修改完成后点击确定保存，直接双击快捷方式即可连接到MySQL数据库&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;PS：&quot;&gt;&lt;a href=&quot;#PS：&quot; class=&quot;headerlink&quot; title=&quot;PS：&quot;&gt;&lt;/a&gt;PS：&lt;/h2&gt;&lt;p&gt;   从 &lt;strong&gt;MySQL5.7&lt;/strong&gt; 开始，安装MySQL服务 &lt;code&gt;net start MySQL&lt;/code&gt; 提示”请键入 NET     HELPMSG 3534 以获得更多的帮助”的解决办法:&lt;/p&gt;
+   &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1. 先删除data目录下的所有文件或者移走（初次解压没有data请忽略此步骤）。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2. mysqld --initialize (初始化 data 并生成随机密码 or)   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   mysqld --initialize-insecure (初始化 data，不生成随机密码)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3. net start mysql&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4. C:\Users\Administrator&amp;gt; mysql -uroot -p默认密码 （默认密码在新生成的 data 文件夹下的 您的计算机名.err 中，eg：_2016-07-13T10:50:57.082079Z 1 [Note] A temporary password is generated for root@localhost: T*1ng)#e2f_k_&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5. 修改密码：mysql&amp;gt; ALTER USER &amp;apos;root&amp;apos;@&amp;apos;localhost&amp;apos; IDENTIFIED BY &amp;apos;root&amp;apos;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Reference：&quot;&gt;&lt;a href=&quot;#Reference：&quot; class=&quot;headerlink&quot; title=&quot;Reference：&quot;&gt;&lt;/a&gt;Reference：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;MySQL 官方文档：&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.7/en/data-directory-initialization-mysqld.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dev.mysql.com/doc/refman/5.7/en/data-directory-initialization-mysqld.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装步骤：&quot;&gt;&lt;a href=&quot;#安装步骤：&quot; class=&quot;headerlink&quot; title=&quot;安装步骤：&quot;&gt;&lt;/a&gt;安装步骤：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下载MySQL Community Server &lt;a href=&quot;http://dev.mysq
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://mapledev.github.io/categories/MySQL/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android 坑神</title>
+    <link href="https://mapledev.github.io/2016/07/13/Android-%E5%9D%91%E7%A5%9E/"/>
+    <id>https://mapledev.github.io/2016/07/13/Android-坑神/</id>
+    <published>2016-07-13T12:53:30.000Z</published>
+    <updated>2016-07-17T03:30:33.277Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;a href=&quot;#ListView中使用type需要注意的东西&quot; class=&quot;headerlink&quot; title=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;/a&gt;ListView中使用type需要注意的东西&lt;/h2&gt;&lt;p&gt;在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_LOAD_MORE = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 切记 ViewType 从 0 开始&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_NORMAL = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;viewpager-onPageSelected没有执行&quot;&gt;&lt;a href=&quot;#viewpager-onPageSelected没有执行&quot; class=&quot;headerlink&quot; title=&quot;viewpager onPageSelected没有执行&quot;&gt;&lt;/a&gt;viewpager onPageSelected没有执行&lt;/h2&gt;&lt;p&gt;忘了在 initView() 中调用&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mViewPager.setOnPageChangeListener(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;ListView-模拟点击-Item-时&quot;&gt;&lt;a href=&quot;#ListView-模拟点击-Item-时&quot; class=&quot;headerlink&quot; title=&quot;ListView 模拟点击 Item 时&quot;&gt;&lt;/a&gt;ListView 模拟点击 Item 时&lt;/h2&gt;&lt;p&gt;务必在 mAdapter 初始化完成后执行（一般在 Handler 的 handleMessage(Message msg) {…} 之中）&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mTopLv.performItemClick(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;a href=&quot;#ListView中使用type需要注意的东西&quot; class=&quot;headerlink&quot; title=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;/a&gt;ListView中使用type需要注意的
+    
+    </summary>
+    
+      <category term="Android" scheme="https://mapledev.github.io/categories/Android/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android 学习笔记、摘要</title>
+    <link href="https://mapledev.github.io/2016/07/13/Android-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%81%E6%91%98%E8%A6%81/"/>
+    <id>https://mapledev.github.io/2016/07/13/Android-学习笔记、摘要/</id>
+    <published>2016-07-13T12:51:52.000Z</published>
+    <updated>2016-07-13T12:51:52.685Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://mapledev.github.io/2016/07/13/hello-world/"/>
+    <id>https://mapledev.github.io/2016/07/13/hello-world/</id>
+    <published>2016-07-13T05:57:51.567Z</published>
+    <updated>2016-07-13T05:57:51.573Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
