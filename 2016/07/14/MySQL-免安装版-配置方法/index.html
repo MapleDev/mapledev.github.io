@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -91,8 +109,7 @@
 
 解压MySQL压缩包
    将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    
-D:\MapleDev\DevProgram\mysql-5.7.13-winx64
-   将解压目录下默认文件 my-default.ini 拷贝一份，改名">
+D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 免安装版 配置方法">
 <meta property="og:url" content="https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/index.html">
@@ -102,9 +119,8 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64
 
 解压MySQL压缩包
    将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    
-D:\MapleDev\DevProgram\mysql-5.7.13-winx64
-   将解压目录下默认文件 my-default.ini 拷贝一份，改名">
-<meta property="og:updated_time" content="2016-07-16T15:53:46.244Z">
+D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
+<meta property="og:updated_time" content="2016-07-17T13:32:17.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 免安装版 配置方法">
 <meta name="twitter:description" content="安装步骤：
@@ -112,8 +128,7 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64
 
 解压MySQL压缩包
    将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    
-D:\MapleDev\DevProgram\mysql-5.7.13-winx64
-   将解压目录下默认文件 my-default.ini 拷贝一份，改名">
+D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
 
 
 
@@ -370,7 +385,8 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64
 <li><p>解压MySQL压缩包</p>
 <p>   将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    </p>
 <pre><code>D:\MapleDev\DevProgram\mysql-5.7.13-winx64
-</code></pre><p>   将解压目录下默认文件 my-default.ini 拷贝一份，改名 my.ini<br>   复制下面的配置信息到 my.ini 保存</p>
+</code></pre> <a id="more"></a>    
+<p>   将解压目录下默认文件 my-default.ini 拷贝一份，改名 my.ini<br>   复制下面的配置信息到 my.ini 保存</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">[client]</div><div class="line"></div><div class="line">port=3306</div><div class="line"></div><div class="line">default-character-set=utf8</div><div class="line"></div><div class="line">[mysqld]</div><div class="line"></div><div class="line">port=3306</div><div class="line"></div><div class="line">character_set_server=utf8</div><div class="line"></div><div class="line">default-storage-engine=innodb</div><div class="line"></div><div class="line"># unzip dir </div><div class="line"></div><div class="line">basedir=D:\MapleDev\DevProgram\mysql-5.7.13-winx64</div><div class="line"></div><div class="line"># unzip dir data dir</div><div class="line"></div><div class="line">datadir=D:\MapleDev\DevProgram\mysql-5.7.13-winx64\data</div><div class="line"></div><div class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</div><div class="line"></div><div class="line">[WinMySQLAdmin]</div><div class="line"></div><div class="line">D:\MapleDev\DevProgram\mysql-5.7.13-winx64\bin\mysqld.exe</div></pre></td></tr></table></figure>
 </li>
 <li><p>添加环境变量</p>
@@ -426,6 +442,27 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>想给我一支兰州的（限男）/ 想请我吃六块钱的麻辣烫的（限女），请扫一扫！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weixin_code_cuted.jpg" alt="Maple WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="Maple Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -462,28 +499,24 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
+        <div class="ds-share flat" data-thread-key="2016/07/14/MySQL-免安装版-配置方法/"
+     data-title="MySQL 免安装版 配置方法"
+     data-content=""
+     data-url="https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
   </div>
@@ -537,7 +570,7 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
+               src="/images/avatar.jpg"
                alt="Maple" />
           <p class="site-author-name" itemprop="name">Maple</p>
           <p class="site-description motion-element" itemprop="description">知道的越多，不知道的更多。</p>
@@ -562,7 +595,7 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

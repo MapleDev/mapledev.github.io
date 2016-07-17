@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -86,9 +104,9 @@
 
 
 
-<meta name="description" content="说起泛型，小白大多是一脸懵逼。其实引用我 Java 的启蒙老师马士兵的话
+<meta name="description" content="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话
 
-豆芽菜长一房高，它也是根菜！咋们把他摘（二声）了就不行了。
+豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。
 
 泛型从 Java 1.5 引进，麻麻再也不用担心我  强转类型  了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。
 泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。
@@ -97,19 +115,19 @@
 <meta property="og:title" content="泛型的使用（小白向）">
 <meta property="og:url" content="https://mapledev.github.io/2016/07/17/泛型的使用（小白向）/index.html">
 <meta property="og:site_name" content="Maple Blog">
-<meta property="og:description" content="说起泛型，小白大多是一脸懵逼。其实引用我 Java 的启蒙老师马士兵的话
+<meta property="og:description" content="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话
 
-豆芽菜长一房高，它也是根菜！咋们把他摘（二声）了就不行了。
+豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。
 
 泛型从 Java 1.5 引进，麻麻再也不用担心我  强转类型  了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。
 泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。
 在这我就说说泛型怎么吃好了 &amp;gt;_&amp;lt;">
-<meta property="og:updated_time" content="2016-07-17T09:21:25.297Z">
+<meta property="og:updated_time" content="2016-07-17T13:31:19.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="泛型的使用（小白向）">
-<meta name="twitter:description" content="说起泛型，小白大多是一脸懵逼。其实引用我 Java 的启蒙老师马士兵的话
+<meta name="twitter:description" content="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话
 
-豆芽菜长一房高，它也是根菜！咋们把他摘（二声）了就不行了。
+豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。
 
 泛型从 Java 1.5 引进，麻麻再也不用担心我  强转类型  了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。
 泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。
@@ -364,9 +382,9 @@
       
 
       
-        <p>说起泛型，小白大多是一脸懵逼。其实引用我 Java 的启蒙老师马士兵的话</p>
+        <p>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</p>
 <blockquote>
-<p>豆芽菜长一房高，它也是根菜！咋们把他摘（二声）了就不行了。</p>
+<p>豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。</p>
 </blockquote>
 <p>泛型从 Java 1.5 引进，麻麻再也不用担心我 <strong> 强转类型 </strong> 了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。</p>
 <p>泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。</p>
@@ -376,7 +394,7 @@
 <p>test 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemoTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrint</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        ParamTypeDemo paramTypeString = <span class="keyword">new</span> ParamTypeDemo();</div><div class="line">        paramTypeString.print(<span class="string">"我是泛型，你会爱我么？"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>可以看到，代码比较简单。但局限性很大，只能传 String 类型，如果相传个 Date、List··· n种类型，只能写 n 中 这样无聊的代码了。。。大家应该都不想的吧。</p>
 <p>不过现在有了泛型是这样的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注意 T 的位置</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">//    @Override</span></div><div class="line"><span class="comment">//    public void print(String msg) &#123;</span></div><div class="line"><span class="comment">//        System.out.print(msg);</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>test 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemoTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrint</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="comment">// 打印 String 没问题</span></div><div class="line">        ParamTypeDemo&lt;String&gt; paramTypeString = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeString.print(<span class="string">"我是泛型，你会爱我么？"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 打印 Date 没问题</span></div><div class="line">        ParamTypeDemo&lt;java.util.Date&gt; paramTypeDate = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeDate.print(<span class="keyword">new</span> java.util.Date(System.currentTimeMillis()));</div><div class="line">		</div><div class="line">		<span class="comment">// 我觉得还可以打印 10086 冇问题</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>test 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemoTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrint</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="comment">// 打印 String 没问题</span></div><div class="line">        ParamTypeDemo&lt;String&gt; paramTypeString = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeString.print(<span class="string">"我是泛型，你会爱我么？"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 打印 Date 没问题</span></div><div class="line">        ParamTypeDemo&lt;java.util.Date&gt; paramTypeDate = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeDate.print(<span class="keyword">new</span> java.util.Date(System.currentTimeMillis()));</div><div class="line"></div><div class="line">        <span class="comment">// 我觉得还可以打印10086个都冇问题</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><ul>
 <li>泛型的 E 文是 Parameter Type （参数类型），大家可以将 <strong> <code>XXType&lt;T&gt;</code> </strong> 看成一个<strong>整体类型</strong>，类似于数组类型 <code>int[]</code></li>
 <li>因为泛型可以看成是类型的一部分，所以她也拥有着类型的<strong>继承体系</strong>。</li>
@@ -397,6 +415,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>想给我一支兰州的（限男）/ 想请我吃六块钱的麻辣烫的（限女），请扫一扫！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weixin_code_cuted.jpg" alt="Maple WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="Maple Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -435,28 +474,24 @@
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
+        <div class="ds-share flat" data-thread-key="2016/07/17/泛型的使用（小白向）/"
+     data-title="泛型的使用（小白向）"
+     data-content=""
+     data-url="https://mapledev.github.io/2016/07/17/泛型的使用（小白向）/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
   </div>
@@ -510,7 +545,7 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
+               src="/images/avatar.jpg"
                alt="Maple" />
           <p class="site-author-name" itemprop="name">Maple</p>
           <p class="site-description motion-element" itemprop="description">知道的越多，不知道的更多。</p>
@@ -535,7 +570,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
