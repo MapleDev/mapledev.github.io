@@ -4,6 +4,36 @@
   
     
     <entry>
+      <title><![CDATA[今天不宜撸代码]]></title>
+      <url>https://mapledev.github.io/2016/07/18/%E4%BB%8A%E5%A4%A9%E4%B8%8D%E5%AE%9C%E6%92%B8%E4%BB%A3%E7%A0%81/</url>
+      <content type="html"><![CDATA[<h2 id="今天掉到一个大坑里去了"><a href="#今天掉到一个大坑里去了" class="headerlink" title="今天掉到一个大坑里去了"></a>今天掉到一个大坑里去了</h2><p>昨天还说：</p>
+<blockquote>
+<p>有空补一个 泛型应用在 JSON 解析时的栗子。</p>
+</blockquote>
+<p>Flag立的飞起。劝君莫装13，会还的。。。</p>
+<a id="more"></a>
+<p>本来的想法是这样的：</p>
+<ol>
+<li>LoginAct点击事件发送 LoginHttpReq 请求至 LoginController。</li>
+<li>LoginController 通过封装好的 HttpUtil 返回 respJSONStr</li>
+<li>解析 respJSONStr 将结果通过回调方法的参数 LoginBean 传回 LoginAct</li>
+<li>LoginAct 里创建 Handle 处理 LoginBean </li>
+<li>。。。</li>
+</ol>
+<p>实际中，1、2、3、4不止 Login 一种，所以代码的提取显得很必要。其中今天我想把第三步抽取一个 BaseController 万能的 Controller 能对各种 JSON 做解析 handleJSON(String respJSONStr) {…} 。<br>这必然需要用到 泛型 。 但是千万要注意：</p>
+<h3 id="泛型擦除-这个大坑"><a href="#泛型擦除-这个大坑" class="headerlink" title=" 泛型擦除  这个大坑"></a><strong> 泛型擦除 </strong> 这个大坑</h3><p>它会造成已知的运行错误：</p>
+<ol>
+<li><code>java.lang.ClassCastException: com.google.gson.internal.LinkedTreeMap cannot be cast to com.xznn.xzmall.bean.RstCategoryBean</code></li>
+<li> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;T&gt; rstCategoryBeans = JSON.parseObject(rstJSONStr, <span class="keyword">new</span> TypeReference&lt;List&lt;T&gt;&gt;() &#123;&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://blog.csdn.net/zxhoo/article/details/34856061" target="_blank" rel="external">http://blog.csdn.net/zxhoo/article/details/34856061</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[泛型的使用（小白向）]]></title>
       <url>https://mapledev.github.io/2016/07/17/%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E5%B0%8F%E7%99%BD%E5%90%91%EF%BC%89/</url>
       <content type="html"><![CDATA[<p>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</p>

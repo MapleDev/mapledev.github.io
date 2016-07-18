@@ -104,15 +104,28 @@
 
 
 
-<meta name="description" content="天堂未必在前方,但地狱一定在身后。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Maple Blog">
-<meta property="og:url" content="https://mapledev.github.io/tags/Android/index.html">
+<meta name="description" content="今天掉到一个大坑里去了昨天还说：
+
+有空补一个 泛型应用在 JSON 解析时的栗子。
+
+Flag立的飞起。劝君莫装13，会还的。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="今天不宜撸代码">
+<meta property="og:url" content="https://mapledev.github.io/2016/07/18/今天不宜撸代码/index.html">
 <meta property="og:site_name" content="Maple Blog">
-<meta property="og:description" content="天堂未必在前方,但地狱一定在身后。">
+<meta property="og:description" content="今天掉到一个大坑里去了昨天还说：
+
+有空补一个 泛型应用在 JSON 解析时的栗子。
+
+Flag立的飞起。劝君莫装13，会还的。。。">
+<meta property="og:updated_time" content="2016-07-18T14:29:53.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maple Blog">
-<meta name="twitter:description" content="天堂未必在前方,但地狱一定在身后。">
+<meta name="twitter:title" content="今天不宜撸代码">
+<meta name="twitter:description" content="今天掉到一个大坑里去了昨天还说：
+
+有空补一个 泛型应用在 JSON 解析时的栗子。
+
+Flag立的飞起。劝君莫装13，会还的。。。">
 
 
 
@@ -133,9 +146,9 @@
 
 
 
-  <link rel="canonical" href="https://mapledev.github.io/tags/Android/"/>
+  <link rel="canonical" href="https://mapledev.github.io/2016/07/18/今天不宜撸代码/"/>
 
-  <title> 标签: Android | Maple Blog </title>
+  <title> 今天不宜撸代码 | Maple Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +178,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -276,53 +289,204 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Android
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                今天不宜撸代码
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T22:03:19+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/18/今天不宜撸代码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/今天不宜撸代码/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="今天掉到一个大坑里去了"><a href="#今天掉到一个大坑里去了" class="headerlink" title="今天掉到一个大坑里去了"></a>今天掉到一个大坑里去了</h2><p>昨天还说：</p>
+<blockquote>
+<p>有空补一个 泛型应用在 JSON 解析时的栗子。</p>
+</blockquote>
+<p>Flag立的飞起。劝君莫装13，会还的。。。</p>
+<a id="more"></a>
+<p>本来的想法是这样的：</p>
+<ol>
+<li>LoginAct点击事件发送 LoginHttpReq 请求至 LoginController。</li>
+<li>LoginController 通过封装好的 HttpUtil 返回 respJSONStr</li>
+<li>解析 respJSONStr 将结果通过回调方法的参数 LoginBean 传回 LoginAct</li>
+<li>LoginAct 里创建 Handle 处理 LoginBean </li>
+<li>。。。</li>
+</ol>
+<p>实际中，1、2、3、4不止 Login 一种，所以代码的提取显得很必要。其中今天我想把第三步抽取一个 BaseController 万能的 Controller 能对各种 JSON 做解析 handleJSON(String respJSONStr) {…} 。<br>这必然需要用到 泛型 。 但是千万要注意：</p>
+<h3 id="泛型擦除-这个大坑"><a href="#泛型擦除-这个大坑" class="headerlink" title=" 泛型擦除  这个大坑"></a><strong> 泛型擦除 </strong> 这个大坑</h3><p>它会造成已知的运行错误：</p>
+<ol>
+<li><code>java.lang.ClassCastException: com.google.gson.internal.LinkedTreeMap cannot be cast to com.xznn.xzmall.bean.RstCategoryBean</code></li>
+<li> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;T&gt; rstCategoryBeans = JSON.parseObject(rstJSONStr, <span class="keyword">new</span> TypeReference&lt;List&lt;T&gt;&gt;() &#123;&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://blog.csdn.net/zxhoo/article/details/34856061" target="_blank" rel="external">http://blog.csdn.net/zxhoo/article/details/34856061</a></li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/07/13/Android-学习笔记、摘要/" itemprop="url">
-              
-                <span itemprop="name">Android 学习笔记、摘要</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>想给我一支兰州的（限男）/ 想请我吃六块钱麻辣烫的（限女），请扫一扫！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weixin_code_cuted.jpg" alt="Maple WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay_code_cutted.jpg" alt="Maple Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-13T20:51:52+08:00"
-              content="2016-07-13" >
-          07-13
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/17/泛型的使用（小白向）/" rel="next" title="泛型的使用（小白向）">
+                <i class="fa fa-chevron-left"></i> 泛型的使用（小白向）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/18/今天不宜撸代码/"
+     data-title="今天不宜撸代码"
+     data-content=""
+     data-url="https://mapledev.github.io/2016/07/18/今天不宜撸代码/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/18/今天不宜撸代码/"
+           data-title="今天不宜撸代码" data-url="https://mapledev.github.io/2016/07/18/今天不宜撸代码/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -342,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -448,6 +621,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#今天掉到一个大坑里去了"><span class="nav-number">1.</span> <span class="nav-text">今天掉到一个大坑里去了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型擦除-这个大坑"><span class="nav-number">1.1.</span> <span class="nav-text"> 泛型擦除  这个大坑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -543,6 +727,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

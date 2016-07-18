@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mapledev.github.io/"/>
-  <updated>2016-07-17T13:31:19.970Z</updated>
+  <updated>2016-07-18T14:29:53.717Z</updated>
   <id>https://mapledev.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今天不宜撸代码</title>
+    <link href="https://mapledev.github.io/2016/07/18/%E4%BB%8A%E5%A4%A9%E4%B8%8D%E5%AE%9C%E6%92%B8%E4%BB%A3%E7%A0%81/"/>
+    <id>https://mapledev.github.io/2016/07/18/今天不宜撸代码/</id>
+    <published>2016-07-18T14:03:19.000Z</published>
+    <updated>2016-07-18T14:29:53.717Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;今天掉到一个大坑里去了&quot;&gt;&lt;a href=&quot;#今天掉到一个大坑里去了&quot; class=&quot;headerlink&quot; title=&quot;今天掉到一个大坑里去了&quot;&gt;&lt;/a&gt;今天掉到一个大坑里去了&lt;/h2&gt;&lt;p&gt;昨天还说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有空补一个 泛型应用在 JSON 解析时的栗子。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Flag立的飞起。劝君莫装13，会还的。。。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;本来的想法是这样的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;LoginAct点击事件发送 LoginHttpReq 请求至 LoginController。&lt;/li&gt;
+&lt;li&gt;LoginController 通过封装好的 HttpUtil 返回 respJSONStr&lt;/li&gt;
+&lt;li&gt;解析 respJSONStr 将结果通过回调方法的参数 LoginBean 传回 LoginAct&lt;/li&gt;
+&lt;li&gt;LoginAct 里创建 Handle 处理 LoginBean &lt;/li&gt;
+&lt;li&gt;。。。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;实际中，1、2、3、4不止 Login 一种，所以代码的提取显得很必要。其中今天我想把第三步抽取一个 BaseController 万能的 Controller 能对各种 JSON 做解析 handleJSON(String respJSONStr) {…} 。&lt;br&gt;这必然需要用到 泛型 。 但是千万要注意：&lt;/p&gt;
+&lt;h3 id=&quot;泛型擦除-这个大坑&quot;&gt;&lt;a href=&quot;#泛型擦除-这个大坑&quot; class=&quot;headerlink&quot; title=&quot; 泛型擦除  这个大坑&quot;&gt;&lt;/a&gt;&lt;strong&gt; 泛型擦除 &lt;/strong&gt; 这个大坑&lt;/h3&gt;&lt;p&gt;它会造成已知的运行错误：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;java.lang.ClassCastException: com.google.gson.internal.LinkedTreeMap cannot be cast to com.xznn.xzmall.bean.RstCategoryBean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt; &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;List&amp;lt;T&amp;gt; rstCategoryBeans = JSON.parseObject(rstJSONStr, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TypeReference&amp;lt;List&amp;lt;T&amp;gt;&amp;gt;() &amp;#123;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zxhoo/article/details/34856061&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/zxhoo/article/details/34856061&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;今天掉到一个大坑里去了&quot;&gt;&lt;a href=&quot;#今天掉到一个大坑里去了&quot; class=&quot;headerlink&quot; title=&quot;今天掉到一个大坑里去了&quot;&gt;&lt;/a&gt;今天掉到一个大坑里去了&lt;/h2&gt;&lt;p&gt;昨天还说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有空补一个 泛型应用在 JSON 解析时的栗子。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Flag立的飞起。劝君莫装13，会还的。。。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>泛型的使用（小白向）</title>
