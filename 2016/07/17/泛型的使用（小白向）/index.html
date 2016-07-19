@@ -105,7 +105,6 @@
 
 
 <meta name="description" content="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话
-
 豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。
 
 泛型从 Java 1.5 引进，麻麻再也不用担心我  强转类型  了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。
@@ -116,17 +115,15 @@
 <meta property="og:url" content="https://mapledev.github.io/2016/07/17/泛型的使用（小白向）/index.html">
 <meta property="og:site_name" content="Maple Blog">
 <meta property="og:description" content="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话
-
 豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。
 
 泛型从 Java 1.5 引进，麻麻再也不用担心我  强转类型  了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。
 泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。
 在这我就说说泛型怎么吃好了 &amp;gt;_&amp;lt;">
-<meta property="og:updated_time" content="2016-07-17T13:31:19.970Z">
+<meta property="og:updated_time" content="2016-07-18T15:37:43.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="泛型的使用（小白向）">
 <meta name="twitter:description" content="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话
-
 豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。
 
 泛型从 Java 1.5 引进，麻麻再也不用担心我  强转类型  了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。
@@ -252,6 +249,16 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
           </a>
         </li>
       
@@ -382,18 +389,17 @@
       
 
       
-        <p>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</p>
-<blockquote>
+        <h2 id="说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话"><a href="#说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话" class="headerlink" title="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话"></a>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</h2><blockquote>
 <p>豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。</p>
 </blockquote>
 <p>泛型从 Java 1.5 引进，麻麻再也不用担心我 <strong> 强转类型 </strong> 了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。</p>
 <p>泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。</p>
 <p>在这我就说说泛型怎么吃好了 &gt;_&lt;</p>
 <a id="more"></a>
-<p>先看看不用泛型会怎样：<br>ParamTypeDemo.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span> <span class="keyword">implements</span> <span class="title">IParamType</span></span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="先看看不用泛型会怎样："><a href="#先看看不用泛型会怎样：" class="headerlink" title="先看看不用泛型会怎样："></a>先看看不用泛型会怎样：</h2><p>ParamTypeDemo.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span> <span class="keyword">implements</span> <span class="title">IParamType</span></span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>test 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemoTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrint</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        ParamTypeDemo paramTypeString = <span class="keyword">new</span> ParamTypeDemo();</div><div class="line">        paramTypeString.print(<span class="string">"我是泛型，你会爱我么？"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>可以看到，代码比较简单。但局限性很大，只能传 String 类型，如果相传个 Date、List··· n种类型，只能写 n 中 这样无聊的代码了。。。大家应该都不想的吧。</p>
-<p>不过现在有了泛型是这样的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注意 T 的位置</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">//    @Override</span></div><div class="line"><span class="comment">//    public void print(String msg) &#123;</span></div><div class="line"><span class="comment">//        System.out.print(msg);</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="不过现在有了泛型是这样的："><a href="#不过现在有了泛型是这样的：" class="headerlink" title="不过现在有了泛型是这样的："></a>不过现在有了泛型是这样的：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注意 T 的位置</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">//    @Override</span></div><div class="line"><span class="comment">//    public void print(String msg) &#123;</span></div><div class="line"><span class="comment">//        System.out.print(msg);</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>test 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemoTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrint</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="comment">// 打印 String 没问题</span></div><div class="line">        ParamTypeDemo&lt;String&gt; paramTypeString = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeString.print(<span class="string">"我是泛型，你会爱我么？"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 打印 Date 没问题</span></div><div class="line">        ParamTypeDemo&lt;java.util.Date&gt; paramTypeDate = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeDate.print(<span class="keyword">new</span> java.util.Date(System.currentTimeMillis()));</div><div class="line"></div><div class="line">        <span class="comment">// 我觉得还可以打印10086个都冇问题</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><ul>
 <li>泛型的 E 文是 Parameter Type （参数类型），大家可以将 <strong> <code>XXType&lt;T&gt;</code> </strong> 看成一个<strong>整体类型</strong>，类似于数组类型 <code>int[]</code></li>
@@ -461,8 +467,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/18/今天不宜撸代码/" rel="prev" title="今天不宜撸代码">
-                今天不宜撸代码 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/" rel="prev" title="今天不宜撸代码----泛型擦除，我记住你了">
+                今天不宜撸代码----泛型擦除，我记住你了 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -574,7 +580,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -637,11 +643,7 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://troyirvo.github.io/" title="MacTalk" target="_blank">MacTalk</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://troyirvo.github.io/" title="Title" target="_blank">Title</a>
+                  <a href="https://troyirvo.github.io/" title="葉十二" target="_blank">葉十二</a>
                 </li>
               
             </ul>
@@ -657,7 +659,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">1.</span> <span class="nav-text">Tips:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话"><span class="nav-number">1.</span> <span class="nav-text">说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先看看不用泛型会怎样："><span class="nav-number">2.</span> <span class="nav-text">先看看不用泛型会怎样：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不过现在有了泛型是这样的："><span class="nav-number">3.</span> <span class="nav-text">不过现在有了泛型是这样的：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">4.</span> <span class="nav-text">Tips:</span></a></li></ol></div>
             
           </div>
         </section>

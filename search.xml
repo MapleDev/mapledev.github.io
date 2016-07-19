@@ -4,31 +4,50 @@
   
     
     <entry>
-      <title><![CDATA[今天不宜撸代码]]></title>
-      <url>https://mapledev.github.io/2016/07/18/%E4%BB%8A%E5%A4%A9%E4%B8%8D%E5%AE%9C%E6%92%B8%E4%BB%A3%E7%A0%81/</url>
-      <content type="html"><![CDATA[<h2 id="今天掉到一个大坑里去了"><a href="#今天掉到一个大坑里去了" class="headerlink" title="今天掉到一个大坑里去了"></a>今天掉到一个大坑里去了</h2><p>昨天还说：</p>
+      <title><![CDATA[今天不宜撸代码----泛型擦除，我记住你了]]></title>
+      <url>https://mapledev.github.io/2016/07/18/%E4%BB%8A%E5%A4%A9%E4%B8%8D%E5%AE%9C%E6%92%B8%E4%BB%A3%E7%A0%81----%E6%B3%9B%E5%9E%8B%E6%93%A6%E9%99%A4%EF%BC%8C%E6%88%91%E8%AE%B0%E4%BD%8F%E4%BD%A0%E4%BA%86/</url>
+      <content type="html"><![CDATA[<p>昨天还说：</p>
 <blockquote>
 <p>有空补一个 泛型应用在 JSON 解析时的栗子。</p>
 </blockquote>
 <p>Flag立的飞起。劝君莫装13，会还的。。。</p>
 <a id="more"></a>
-<p>本来的想法是这样的：</p>
-<ol>
-<li>LoginAct点击事件发送 LoginHttpReq 请求至 LoginController。</li>
-<li>LoginController 通过封装好的 HttpUtil 返回 respJSONStr</li>
-<li>解析 respJSONStr 将结果通过回调方法的参数 LoginBean 传回 LoginAct</li>
+<h2 id="本来的想法是这样的："><a href="#本来的想法是这样的：" class="headerlink" title="本来的想法是这样的："></a>本来的想法是这样的：</h2><ol>
+<li>LoginAct点击事件发送 LoginHttpReq 请求至 LoginController。<em>(V)</em></li>
+<li>LoginController 通过封装好的 HttpUtil 返回 respJSONStr。<em>(C)</em></li>
+<li>解析 respJSONStr 将结果通过回调方法的参数 LoginBean 传回 LoginAct。<em>(M)</em></li>
 <li>LoginAct 里创建 Handle 处理 LoginBean </li>
 <li>。。。</li>
 </ol>
 <p>实际中，1、2、3、4不止 Login 一种，所以代码的提取显得很必要。其中今天我想把第三步抽取一个 BaseController 万能的 Controller 能对各种 JSON 做解析 handleJSON(String respJSONStr) {…} 。<br>这必然需要用到 泛型 。 但是千万要注意：</p>
 <h3 id="泛型擦除-这个大坑"><a href="#泛型擦除-这个大坑" class="headerlink" title=" 泛型擦除  这个大坑"></a><strong> 泛型擦除 </strong> 这个大坑</h3><p>它会造成已知的运行错误：</p>
 <ol>
-<li><code>java.lang.ClassCastException: com.google.gson.internal.LinkedTreeMap cannot be cast to com.xznn.xzmall.bean.RstCategoryBean</code></li>
-<li> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;T&gt; rstCategoryBeans = JSON.parseObject(rstJSONStr, <span class="keyword">new</span> TypeReference&lt;List&lt;T&gt;&gt;() &#123;&#125;);</div></pre></td></tr></table></figure>
+<li><p>以下代码中的 <code>new TypeReference&lt;List&lt;T&gt;&gt;(){}</code> T 只是 Java 的语法糖，她只会存在编译器阶段限定 List 中的类型，编译成为 class 二进制文件 T 的生命就寝了，所以她  <code>new TypeReference&lt;List&lt;Object&gt;&gt;(){}</code>，这称为泛型擦除 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;T&gt; rstBeans = JSON.parseObject(rstJSONStr, <span class="keyword">new</span> TypeReference&lt;List&lt;T&gt;&gt;()&#123;&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>so 当运行时 <code>RstLoginBean rstLoginBean = rstBeans.get(0);</code> 时悲剧发生了：<br><code>java.lang.ClassCastException: com.google.gson.internal.LinkedTreeMap cannot be cast to com.xznn.xzmall.bean.RstLoginBean</code><br>而 IDE 不会报任何错误。（注意 <code>LinkedTreeMap</code> cast to <code>RstLoginBean</code>）</p>
 </li>
 </ol>
+<h2 id="喜闻乐见好人做好的轮子："><a href="#喜闻乐见好人做好的轮子：" class="headerlink" title="喜闻乐见好人做好的轮子："></a>喜闻乐见好人做好的轮子：</h2><pre><code class="java"><span class="comment">/**
+ * <span class="doctag">@author</span> MapleDev
+ * <span class="doctag">@time</span> 16/07/19  21:22
+ * <span class="doctag">@desc</span> 将 JSON String 装换成 List&lt;T&gt;
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">ArrayList&lt;T&gt; <span class="title">json2List</span><span class="params">(String json, Class&lt;T&gt; classOfT)</span> </span>{
+    <span class="comment">// 先反序列化出ArrayList&lt;JsonObject&gt;</span>
+    Gson gson = <span class="keyword">new</span> Gson();
+    Type type = <span class="keyword">new</span> TypeToken&lt;ArrayList&lt;JsonObject&gt;&gt;(){}.getType();
+    ArrayList&lt;JsonObject&gt; jsonObjs = gson.fromJson(json, type);
+    <span class="comment">// 然后在一个个的把JsonObject转成classOfT类型的对象</span>
+    ArrayList&lt;T&gt; listOfT = <span class="keyword">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">for</span> (JsonObject jsonObj : jsonObjs) {
+        listOfT.add(gson.fromJson(jsonObj, classOfT));
+    }
+    <span class="keyword">return</span> listOfT;
+}
+</code></pre>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="http://blog.csdn.net/zxhoo/article/details/34856061" target="_blank" rel="external">http://blog.csdn.net/zxhoo/article/details/34856061</a></li>
+<li><a href="http://blog.csdn.net/zxhoo/article/details/34856061" target="_blank" rel="external">GSON使用笔记（3） – 如何反序列化出List - zxh的专栏 - 博客频道 - CSDN.NET:</a></li>
 </ul>
 ]]></content>
     </entry>
@@ -36,18 +55,17 @@
     <entry>
       <title><![CDATA[泛型的使用（小白向）]]></title>
       <url>https://mapledev.github.io/2016/07/17/%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E5%B0%8F%E7%99%BD%E5%90%91%EF%BC%89/</url>
-      <content type="html"><![CDATA[<p>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</p>
-<blockquote>
+      <content type="html"><![CDATA[<h2 id="说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话"><a href="#说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话" class="headerlink" title="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话"></a>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</h2><blockquote>
 <p>豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。</p>
 </blockquote>
 <p>泛型从 Java 1.5 引进，麻麻再也不用担心我 <strong> 强转类型 </strong> 了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。</p>
 <p>泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。</p>
 <p>在这我就说说泛型怎么吃好了 &gt;_&lt;</p>
 <a id="more"></a>
-<p>先看看不用泛型会怎样：<br>ParamTypeDemo.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span> <span class="keyword">implements</span> <span class="title">IParamType</span></span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="先看看不用泛型会怎样："><a href="#先看看不用泛型会怎样：" class="headerlink" title="先看看不用泛型会怎样："></a>先看看不用泛型会怎样：</h2><p>ParamTypeDemo.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span> <span class="keyword">implements</span> <span class="title">IParamType</span></span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>test 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemoTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrint</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        ParamTypeDemo paramTypeString = <span class="keyword">new</span> ParamTypeDemo();</div><div class="line">        paramTypeString.print(<span class="string">"我是泛型，你会爱我么？"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>可以看到，代码比较简单。但局限性很大，只能传 String 类型，如果相传个 Date、List··· n种类型，只能写 n 中 这样无聊的代码了。。。大家应该都不想的吧。</p>
-<p>不过现在有了泛型是这样的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注意 T 的位置</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">//    @Override</span></div><div class="line"><span class="comment">//    public void print(String msg) &#123;</span></div><div class="line"><span class="comment">//        System.out.print(msg);</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="不过现在有了泛型是这样的："><a href="#不过现在有了泛型是这样的：" class="headerlink" title="不过现在有了泛型是这样的："></a>不过现在有了泛型是这样的：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注意 T 的位置</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemo</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">IParamType</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(T msg)</span> </span>&#123;</div><div class="line">        System.out.println(msg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">//    @Override</span></div><div class="line"><span class="comment">//    public void print(String msg) &#123;</span></div><div class="line"><span class="comment">//        System.out.print(msg);</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>test 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamTypeDemoTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrint</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="comment">// 打印 String 没问题</span></div><div class="line">        ParamTypeDemo&lt;String&gt; paramTypeString = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeString.print(<span class="string">"我是泛型，你会爱我么？"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 打印 Date 没问题</span></div><div class="line">        ParamTypeDemo&lt;java.util.Date&gt; paramTypeDate = <span class="keyword">new</span> ParamTypeDemo&lt;&gt;();</div><div class="line">        paramTypeDate.print(<span class="keyword">new</span> java.util.Date(System.currentTimeMillis()));</div><div class="line"></div><div class="line">        <span class="comment">// 我觉得还可以打印10086个都冇问题</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><ul>
 <li>泛型的 E 文是 Parameter Type （参数类型），大家可以将 <strong> <code>XXType&lt;T&gt;</code> </strong> 看成一个<strong>整体类型</strong>，类似于数组类型 <code>int[]</code></li>
