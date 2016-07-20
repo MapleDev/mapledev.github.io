@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mapledev.github.io/"/>
-  <updated>2016-07-18T16:04:50.855Z</updated>
+  <updated>2016-07-20T14:24:37.475Z</updated>
   <id>https://mapledev.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>随想</title>
+    <link href="https://mapledev.github.io/2016/07/20/%E9%9A%8F%E6%83%B3/"/>
+    <id>https://mapledev.github.io/2016/07/20/随想/</id>
+    <published>2016-07-20T14:18:07.000Z</published>
+    <updated>2016-07-20T14:24:37.475Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;今天一天是普通的一天，也是我一生中唯一的-2016-07-20&quot;&gt;&lt;a href=&quot;#今天一天是普通的一天，也是我一生中唯一的-2016-07-20&quot; class=&quot;headerlink&quot; title=&quot;今天一天是普通的一天，也是我一生中唯一的 2016-07-20&quot;&gt;&lt;/a&gt;今天一天是普通的一天，也是我一生中唯一的 2016-07-20&lt;/h2&gt;&lt;p&gt;时间的重要性不用再提，可是我想在这检讨自己，总是不能珍惜时间。把时间多花在有意义的地方。那什么地方是有意义呢？我想应该是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;站在长长的时间维度上，多想想。&lt;/li&gt;
+&lt;li&gt;站在大大的空间维度上，多想想。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;今天一天是普通的一天，也是我一生中唯一的-2016-07-20&quot;&gt;&lt;a href=&quot;#今天一天是普通的一天，也是我一生中唯一的-2016-07-20&quot; class=&quot;headerlink&quot; title=&quot;今天一天是普通的一天，也是我一生中唯一的 2016-07-20&quot;&gt;&lt;/a&gt;今天一天是普通的一天，也是我一生中唯一的 2016-07-20&lt;/h2&gt;&lt;p&gt;时间的重要性不用再提，可是我想在这检讨自己，总是不能珍惜时间。把时间多花在有意义的地方。那什么地方是有意义呢？我想应该是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;站在长长的时间维度上，多想想。&lt;/li&gt;
+&lt;li&gt;站在大大的空间维度上，多想想。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="未分类" scheme="https://mapledev.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>今天不宜撸代码----泛型擦除，我记住你了</title>
     <link href="https://mapledev.github.io/2016/07/18/%E4%BB%8A%E5%A4%A9%E4%B8%8D%E5%AE%9C%E6%92%B8%E4%BB%A3%E7%A0%81----%E6%B3%9B%E5%9E%8B%E6%93%A6%E9%99%A4%EF%BC%8C%E6%88%91%E8%AE%B0%E4%BD%8F%E4%BD%A0%E4%BA%86/"/>
     <id>https://mapledev.github.io/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/</id>
     <published>2016-07-18T14:03:19.000Z</published>
-    <updated>2016-07-18T16:04:50.855Z</updated>
+    <updated>2016-07-19T05:34:58.567Z</updated>
     
     <content type="html">&lt;p&gt;昨天还说：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -44,24 +74,7 @@
 &lt;li&gt;&lt;p&gt;so 当运行时 &lt;code&gt;RstLoginBean rstLoginBean = rstBeans.get(0);&lt;/code&gt; 时悲剧发生了：&lt;br&gt;&lt;code&gt;java.lang.ClassCastException: com.google.gson.internal.LinkedTreeMap cannot be cast to com.xznn.xzmall.bean.RstLoginBean&lt;/code&gt;&lt;br&gt;而 IDE 不会报任何错误。（注意 &lt;code&gt;LinkedTreeMap&lt;/code&gt; cast to &lt;code&gt;RstLoginBean&lt;/code&gt;）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&quot;喜闻乐见好人做好的轮子：&quot;&gt;&lt;a href=&quot;#喜闻乐见好人做好的轮子：&quot; class=&quot;headerlink&quot; title=&quot;喜闻乐见好人做好的轮子：&quot;&gt;&lt;/a&gt;喜闻乐见好人做好的轮子：&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**
- * &lt;span class=&quot;doctag&quot;&gt;@author&lt;/span&gt; MapleDev
- * &lt;span class=&quot;doctag&quot;&gt;@time&lt;/span&gt; 16/07/19  21:22
- * &lt;span class=&quot;doctag&quot;&gt;@desc&lt;/span&gt; 将 JSON String 装换成 List&amp;lt;T&amp;gt;
- */&lt;/span&gt;
-&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &amp;lt;T&amp;gt; &lt;span class=&quot;function&quot;&gt;ArrayList&amp;lt;T&amp;gt; &lt;span class=&quot;title&quot;&gt;json2List&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String json, Class&amp;lt;T&amp;gt; classOfT)&lt;/span&gt; &lt;/span&gt;{
-    &lt;span class=&quot;comment&quot;&gt;// 先反序列化出ArrayList&amp;lt;JsonObject&amp;gt;&lt;/span&gt;
-    Gson gson = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Gson();
-    Type type = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TypeToken&amp;lt;ArrayList&amp;lt;JsonObject&amp;gt;&amp;gt;(){}.getType();
-    ArrayList&amp;lt;JsonObject&amp;gt; jsonObjs = gson.fromJson(json, type);
-    &lt;span class=&quot;comment&quot;&gt;// 然后在一个个的把JsonObject转成classOfT类型的对象&lt;/span&gt;
-    ArrayList&amp;lt;T&amp;gt; listOfT = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();
-    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (JsonObject jsonObj : jsonObjs) {
-        listOfT.add(gson.fromJson(jsonObj, classOfT));
-    }
-    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; listOfT;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;喜闻乐见好人做好的轮子：&quot;&gt;&lt;a href=&quot;#喜闻乐见好人做好的轮子：&quot; class=&quot;headerlink&quot; title=&quot;喜闻乐见好人做好的轮子：&quot;&gt;&lt;/a&gt;喜闻乐见好人做好的轮子：&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@author&lt;/span&gt; MapleDev&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@time&lt;/span&gt; 16/07/19  21:22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@desc&lt;/span&gt; 将 JSON String 转化成 List&amp;lt;T&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &amp;lt;T&amp;gt; &lt;span class=&quot;function&quot;&gt;ArrayList&amp;lt;T&amp;gt; &lt;span class=&quot;title&quot;&gt;json2List&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String json, Class&amp;lt;T&amp;gt; classOfT)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 先反序列化出ArrayList&amp;lt;JsonObject&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Gson gson = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Gson();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Type type = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TypeToken&amp;lt;ArrayList&amp;lt;JsonObject&amp;gt;&amp;gt;()&amp;#123;&amp;#125;.getType();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ArrayList&amp;lt;JsonObject&amp;gt; jsonObjs = gson.fromJson(json, type);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 然后在一个个的把JsonObject转成classOfT类型的对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ArrayList&amp;lt;T&amp;gt; listOfT = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (JsonObject jsonObj : jsonObjs) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            listOfT.add(gson.fromJson(jsonObj, classOfT));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; listOfT;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;``` &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;OR 更简洁的写法：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;``` java&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@author&lt;/span&gt; MapleDev&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@time&lt;/span&gt; 16/07/19  21:32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@desc&lt;/span&gt; 将 JSON String 转化成 List&amp;lt;T&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &amp;lt;T&amp;gt; &lt;span class=&quot;function&quot;&gt;List&amp;lt;T&amp;gt; &lt;span class=&quot;title&quot;&gt;json2List&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String json, Class&amp;lt;T&amp;gt; clazz)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        List&amp;lt;T&amp;gt; lst = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        JsonArray array = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; JsonParser().parse(json).getAsJsonArray();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (JsonElement elem : array) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            lst.add(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Gson().fromJson(elem, clazz));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; lst;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zxhoo/article/details/34856061&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GSON使用笔记（3） – 如何反序列化出List - zxh的专栏 - 博客频道 - CSDN.NET:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
