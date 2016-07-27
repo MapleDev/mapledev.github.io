@@ -107,7 +107,7 @@
 <meta name="description" content="天堂未必在前方,但地狱一定在身后。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Maple Blog">
-<meta property="og:url" content="https://mapledev.github.io/index.html">
+<meta property="og:url" content="https://mapledev.github.io/tags/IntentService-ResultReceiver/index.html">
 <meta property="og:site_name" content="Maple Blog">
 <meta property="og:description" content="天堂未必在前方,但地狱一定在身后。">
 <meta name="twitter:card" content="summary">
@@ -133,9 +133,9 @@
 
 
 
-  <link rel="canonical" href="https://mapledev.github.io/"/>
+  <link rel="canonical" href="https://mapledev.github.io/tags/IntentService-ResultReceiver/"/>
 
-  <title> Maple Blog. Hexo, NexT - Maple Blog - 天堂未必在前方,但地狱一定在身后。 </title>
+  <title> 标签: IntentService ResultReceiver | Maple Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,9 +165,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,644 +285,47 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        IntentService ResultReceiver
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/27/ResultReceiver在IntentService中的使用/" itemprop="url">
-                  ResultReceiver在IntentService中的使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T18:00:22+08:00" content="2016-07-27">
-              2016-07-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/27/ResultReceiver在IntentService中的使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/ResultReceiver在IntentService中的使用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
-      
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <h2 id="想回去通风报信，没那么简单，就能…"><a href="#想回去通风报信，没那么简单，就能…" class="headerlink" title="想回去通风报信，没那么简单，就能…"></a>想回去通风报信，没那么简单，就能…</h2><p>IntentService使用很方便，但是想在 IntentService 返回一个 String 回 Act 就有点麻烦了。简单的回调方法对于 IntentService 是无效的。因为 IntentService 是新开的一个进程，涉及到了IPC。可以想到的方法：</p>
-<ol>
-<li>广播</li>
-<li>Binder</li>
-<li>ResultReceiver<br>后者比较陌生，没关系，我画了一张不标准的时序图：<br><img src="http://oaz0grxej.bkt.clouddn.com/blog_img_Activity_IntentService_ResultReceiver%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg" alt="Activity_IntentService_ResultReceiver时序图"><br>Activity_IntentService_ResultReceiver时序图<br>ps:刚注册的七牛弄得图床，test。</li>
-</ol>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/27/ResultReceiver在IntentService中的使用/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="post-title-link" href="/2016/07/27/ResultReceiver在IntentService中的使用/" itemprop="url">
+              
+                <span itemprop="name">ResultReceiver在IntentService中的使用</span>
+              
             </a>
-          </div>
         
-      
-    </div>
+      </h1>
 
-    <div>
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-07-27T18:00:22+08:00"
+              content="2016-07-27" >
+          07-27
+        </time>
+      </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
     
-      
+  </div>
 
   
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/25/思想汇报/" itemprop="url">
-                  思想汇报
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T22:07:54+08:00" content="2016-07-25">
-              2016-07-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/25/思想汇报/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/思想汇报/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>反正这也没有什么人，就随便写点吧。<br>转眼五天过去了，没有更新。发现我有这毛病：</p>
-<ul>
-<li>干什么事，都是兴起，搞好了三分钟的热度</li>
-</ul>
-<p>就拿这博客来说，没有弄之前很想弄好，想着自个天天更新，像那些大牛一样分享助人。说不定人家一高兴，还赏我一块二块的冰棍钱。但是坚持个二三天，热度消失了，就懒癌发作了。</p>
-<h2 id="检讨自己"><a href="#检讨自己" class="headerlink" title="检讨自己"></a>检讨自己</h2><p>有个小博客也是蛮好的，人生在世几十年，说不定我没有了，这里还在呢：P</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/20/随想/" itemprop="url">
-                  随想
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-20T22:18:07+08:00" content="2016-07-20">
-              2016-07-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/20/随想/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/20/随想/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="今天一天是普通的一天，也是我一生中唯一的-2016-07-20"><a href="#今天一天是普通的一天，也是我一生中唯一的-2016-07-20" class="headerlink" title="今天一天是普通的一天，也是我一生中唯一的 2016-07-20"></a>今天一天是普通的一天，也是我一生中唯一的 2016-07-20</h2><p>时间的重要性不用再提，可是我想在这检讨自己，总是不能珍惜时间。把时间多花在有意义的地方。那什么地方是有意义呢？我想应该是：</p>
-<ul>
-<li>站在长长的时间维度上，多想想。</li>
-<li>站在大大的空间维度上，多想想。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/" itemprop="url">
-                  今天不宜撸代码----泛型擦除，我记住你了
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:03:19+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>昨天还说：</p>
-<blockquote>
-<p>有空补一个 泛型应用在 JSON 解析时的栗子。</p>
-</blockquote>
-<p>Flag立的飞起。劝君莫装13，会还的。。。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/17/泛型的使用（小白向）/" itemprop="url">
-                  泛型的使用（小白向）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-17T11:34:43+08:00" content="2016-07-17">
-              2016-07-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/17/泛型的使用（小白向）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/17/泛型的使用（小白向）/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话"><a href="#说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话" class="headerlink" title="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话"></a>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</h2><blockquote>
-<p>豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。</p>
-</blockquote>
-<p>泛型从 Java 1.5 引进，麻麻再也不用担心我 <strong> 强转类型 </strong> 了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。</p>
-<p>泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。</p>
-<p>在这我就说说泛型怎么吃好了 &gt;_&lt;</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/17/泛型的使用（小白向）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
