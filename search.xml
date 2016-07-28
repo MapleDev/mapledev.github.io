@@ -4,6 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[Test]]></title>
+      <url>https://mapledev.github.io/2016/07/28/Test/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="感谢："><a href="#感谢：" class="headerlink" title="感谢："></a>感谢：</h2><ul>
+<li></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ResultReceiver在IntentService中的使用]]></title>
       <url>https://mapledev.github.io/2016/07/27/ResultReceiver%E5%9C%A8IntentService%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h2 id="想回去通风报信，没那么简单，就能…"><a href="#想回去通风报信，没那么简单，就能…" class="headerlink" title="想回去通风报信，没那么简单，就能…"></a>想回去通风报信，没那么简单，就能…</h2><p>IntentService使用很方便，但是想在 IntentService 返回一个 String 回 Act 就有点麻烦了。简单的回调方法对于 IntentService 是无效的。因为 IntentService 是新开的一个进程，涉及到了IPC。可以想到的方法：</p>
