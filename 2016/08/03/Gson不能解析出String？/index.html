@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Maple Blog. Hexo, NexT" />
+  <meta name="keywords" content="JSON," />
 
 
 
@@ -104,31 +104,19 @@
 
 
 
-<meta name="description" content="安装步骤：
-下载MySQL Community Server http://dev.mysql.com/downloads/mysql/
-
-解压MySQL压缩包
-   将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    
-D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
+<meta name="description" content="首先上答案：不能。但是我们可以曲线救国。
+问题的引出在做「看看知乎」App式需要解析如下 JsonString：url：http://api.kanzhihu.com/getposts">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 免安装版 配置方法">
-<meta property="og:url" content="https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/index.html">
+<meta property="og:title" content="Gson不能解析出String？">
+<meta property="og:url" content="https://mapledev.github.io/2016/08/03/Gson不能解析出String？/index.html">
 <meta property="og:site_name" content="Maple Blog">
-<meta property="og:description" content="安装步骤：
-下载MySQL Community Server http://dev.mysql.com/downloads/mysql/
-
-解压MySQL压缩包
-   将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    
-D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
-<meta property="og:updated_time" content="2016-07-17T13:32:17.662Z">
+<meta property="og:description" content="首先上答案：不能。但是我们可以曲线救国。
+问题的引出在做「看看知乎」App式需要解析如下 JsonString：url：http://api.kanzhihu.com/getposts">
+<meta property="og:updated_time" content="2016-08-03T12:08:33.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 免安装版 配置方法">
-<meta name="twitter:description" content="安装步骤：
-下载MySQL Community Server http://dev.mysql.com/downloads/mysql/
-
-解压MySQL压缩包
-   将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    
-D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
+<meta name="twitter:title" content="Gson不能解析出String？">
+<meta name="twitter:description" content="首先上答案：不能。但是我们可以曲线救国。
+问题的引出在做「看看知乎」App式需要解析如下 JsonString：url：http://api.kanzhihu.com/getposts">
 
 
 
@@ -149,9 +137,9 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
 
 
 
-  <link rel="canonical" href="https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/"/>
+  <link rel="canonical" href="https://mapledev.github.io/2016/08/03/Gson不能解析出String？/"/>
 
-  <title> MySQL 免安装版 配置方法 | Maple Blog </title>
+  <title> Gson不能解析出String？ | Maple Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -313,7 +301,7 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
             
             
               
-                MySQL 免安装版 配置方法
+                Gson不能解析出String？
               
             
           </h1>
@@ -325,8 +313,8 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-14T14:33:13+08:00" content="2016-07-14">
-              2016-07-14
+            <time itemprop="dateCreated" datetime="2016-08-03T19:39:46+08:00" content="2016-08-03">
+              2016-08-03
             </time>
           </span>
 
@@ -339,8 +327,8 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -355,8 +343,8 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/14/MySQL-免安装版-配置方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/14/MySQL-免安装版-配置方法/" itemprop="commentsCount"></span>
+                <a href="/2016/08/03/Gson不能解析出String？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/03/Gson不能解析出String？/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -379,55 +367,26 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
       
 
       
-        <h2 id="安装步骤："><a href="#安装步骤：" class="headerlink" title="安装步骤："></a>安装步骤：</h2><ol>
-<li><p>下载MySQL Community Server <a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a></p>
+        <h2 id="首先上答案：不能。"><a href="#首先上答案：不能。" class="headerlink" title="首先上答案：不能。"></a>首先上答案：不能。</h2><p>但是我们可以曲线救国。</p>
+<h2 id="问题的引出"><a href="#问题的引出" class="headerlink" title="问题的引出"></a>问题的引出</h2><p>在做「看看知乎」App式需要解析如下 JsonString：<br>url：<code>http://api.kanzhihu.com/getposts</code></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;count&quot;: 10,</div><div class="line">    &quot;error&quot;: &quot;&quot;,</div><div class="line">    &quot;posts&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;count&quot;: &quot;32&quot;,</div><div class="line">            &quot;date&quot;: &quot;2016-08-03&quot;,</div><div class="line">            &quot;excerpt&quot;: &quot;摘录了『军队长期不打仗投入战斗后可能会犯哪些“幼稚病”？』、『感染 HIV 是一种怎样的经历？』、『歧视可以有多可怕？』、『如何评价小米笔记本 Air？』、『说说有哪些近乎完美的男星，从外表到灵魂的那种？』、『你亲身经历过哪些听起来像段子一样的故事？』、『有哪些意料之外情理之中的好故事？』、『你认为的演技最好的大陆男演员是谁？』、『有什么适合高中生读的好书？』、『上下五千年，你认为哪一个人是中华的最大功臣？』等问题下的32个答案&quot;,</div><div class="line">            &quot;id&quot;: &quot;2354&quot;,</div><div class="line">            &quot;name&quot;: &quot;recent&quot;,</div><div class="line">            &quot;pic&quot;: &quot;http://www.kanzhihu.com/wp-content/uploads/2016/08/recent-2016-08-03.jpg&quot;,</div><div class="line">            &quot;publishtime&quot;: &quot;1470193200&quot;</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            &quot;count&quot;: &quot;32&quot;,</div><div class="line">            &quot;date&quot;: &quot;2016-08-03&quot;,</div><div class="line">            &quot;excerpt&quot;: &quot;摘录了『警界有哪些经典笑话？』、『如何评价「一夜之间百度云被塞满黄片」？』、『哪些歌手的真实性格和他官方人设非常不符？』、『没文化有多可怕？』、『女孩子被富养是怎样的感受？』、『战争有多残酷？』、『如何看待威海车主虐狗事件？』、『中国的工匠精神去哪了？』、『身为女性，在平时生活中有哪些事情是你格外留意的？』、『为什么国内的居民普遍觉得看病贵？』、『为什么总害怕麻烦别人？』、『如何看待滴滴收购 Uber 中国？』等问题下的32个答案&quot;,</div><div class="line">            &quot;id&quot;: &quot;2353&quot;,</div><div class="line">            &quot;name&quot;: &quot;yesterday&quot;,</div><div class="line">            &quot;pic&quot;: &quot;http://www.kanzhihu.com/wp-content/uploads/2016/08/yesterday-2016-08-03.jpg&quot;,</div><div class="line">            &quot;publishtime&quot;: &quot;1470171600&quot;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>so 我们应建立对应的 IsErrorBean：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class IsErrorBean &#123;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * count : 10</div><div class="line">     * error :</div><div class="line">     */</div><div class="line"></div><div class="line">    private int count;</div><div class="line">    private String error;</div><div class="line">    private ArrayList posts;</div><div class="line">	// set get ignored</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以及 PostsBean<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public class PostsBean &#123;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * count : 32</div><div class="line">     * date : 2016-07-29</div><div class="line">     * excerpt : 摘录了『如何评价《幻城》电视剧？』、『为什么历史上云南的存在感很低？』、『受过良好教育的穆斯林女性对伊斯兰教是什么态度？』、『独立居住是一种怎样的体验？』、『没文化有多可怕？』、『为什么少有人同情八达岭野生动物园事件的女主，而多是冷眼咒骂甚至拍手称快的回应？』、『你亲身经历过哪些听起来像段子一样的故事？』、『国内有哪些给人印象深刻的海报？』、『有哪些让你笑到肾抽筋的段子？』、『如何看待英国每日邮报的新闻：‘广州地铁上男子称呼黑人为「黑鬼」被打耳光’？』等问题下的32个答案</div><div class="line">     * id : 2339</div><div class="line">     * name : recent</div><div class="line">     * pic : http://www.kanzhihu.com/wp-content/uploads/2016/07/recent-2016-07-29.jpg</div><div class="line">     * publishtime : 1469761200</div><div class="line">     */</div><div class="line"></div><div class="line">    private int count;</div><div class="line">    private String date;</div><div class="line">    private String excerpt;</div><div class="line">    private int id;</div><div class="line">    private String name;</div><div class="line">    private String pic;</div><div class="line">    private int publishtime;</div><div class="line">	// set get ignored</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在对于<code>posts</code>的类型选取上让人有点纠结。我直接给出我的经验：</p>
+<ul>
+<li><p>如果使用 FastJson ，posts 也可以选择 String类型，eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// FastJson 解析 ok</div><div class="line">IsErrorBean isErrorBean1 = JSON.parseObject(respJsonStr, IsErrorBean.class);</div><div class="line">	</div><div class="line">if (TextUtils.isEmpty(isErrorBean1.getError())) &#123;</div><div class="line">    String posts = isErrorBean1.getPosts();</div><div class="line">    Logger.d(&quot;=== 变量：posts = &quot; + posts);</div><div class="line">    postsBeans = JSON.parseArray(posts, PostsBean.class);</div><div class="line">    Logger.d(&quot;=== 变量：postsBeen = &quot; + postsBeans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>解压MySQL压缩包</p>
-<p>   将已下载的MySQL压缩包解压到自定义目录下,我的解压目录是:    </p>
-<pre><code>D:\MapleDev\DevProgram\mysql-5.7.13-winx64
-</code></pre> <a id="more"></a>    
-<p>   将解压目录下默认文件 my-default.ini 拷贝一份，改名 my.ini<br>   复制下面的配置信息到 my.ini 保存</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">[client]</div><div class="line"></div><div class="line">port=3306</div><div class="line"></div><div class="line">default-character-set=utf8</div><div class="line"></div><div class="line">[mysqld]</div><div class="line"></div><div class="line">port=3306</div><div class="line"></div><div class="line">character_set_server=utf8</div><div class="line"></div><div class="line">default-storage-engine=innodb</div><div class="line"></div><div class="line"># unzip dir </div><div class="line"></div><div class="line">basedir=D:\MapleDev\DevProgram\mysql-5.7.13-winx64</div><div class="line"></div><div class="line"># unzip dir data dir</div><div class="line"></div><div class="line">datadir=D:\MapleDev\DevProgram\mysql-5.7.13-winx64\data</div><div class="line"></div><div class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</div><div class="line"></div><div class="line">[WinMySQLAdmin]</div><div class="line"></div><div class="line">D:\MapleDev\DevProgram\mysql-5.7.13-winx64\bin\mysqld.exe</div></pre></td></tr></table></figure>
+<li><p>如果使用 Gson ，posts 应选择 ArrayList 类型，eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// Gson 解析</div><div class="line">Gson gson = new Gson();</div><div class="line">String posts = null;</div><div class="line">try &#123;</div><div class="line">    posts = new JSONObject(respJsonStr).optString(&quot;posts&quot;);</div><div class="line">    Logger.d(&quot;=== 变量：posts  = &quot; + posts);</div><div class="line">&#125; catch (JSONException e) &#123;</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;</div><div class="line">postsBeans = gson.fromJson(posts, new TypeToken&lt;List&lt;PostsBean&gt;&gt;() &#123;&#125;.getType());</div><div class="line">Logger.d(&quot;=== 变量：postsBeans = &quot; + postsBeans);</div></pre></td></tr></table></figure>
 </li>
-<li><p>添加环境变量</p>
-<p> 操作如下：</p>
-<p> 1）右键单击我的电脑-&gt;属性-&gt;高级系统设置(高级)-&gt;环境变量</p>
-<p>   点击系统变量下的新建按钮</p>
-<p>   输入变量名：<code>MYSQL_HOME</code></p>
-<p>   输入变量值：<code>D:\MapleDev\DevProgram\mysql-5.7.13-winx64</code></p>
-<p>   #即为mysql的自定义解压目录。</p>
-<p> 2）选择系统变量中的Path</p>
-<p> 点击编辑按钮</p>
-<p>   在变量值中添加变量值：<code>%MYSQL_HOME%\bin</code></p>
-<p>   注意是在原有变量值后面加上这个变量，用;隔开，不能删除原来的变量值，</p>
-</li>
-<li><p>将mysql注册为windows系统服务</p>
-<p> 1）从控制台进入到MySQL解压目录下的 bin 目录下：</p>
-<p> 2）输入服务安装命令：<br><code>mysqld install MySQL --defaults-file=&quot;d:\MapleDev\DevProgram\mysql-5.7.13-winx64\my.ini&quot;</code></p>
-<p> 安装成功后会提示服务安装成功。</p>
-<p> <strong>移除</strong>服务命令为：<code>mysqld remove</code></p>
-</li>
-<li><p>启动MySQL服务</p>
-<p> 启动服务命令为：<code>net start mysql</code></p>
-</li>
-<li><p>修改 root 账号的密码</p>
-<p> 刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：root</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">c:&gt;mysql –uroot</div><div class="line"></div><div class="line">mysql&gt;show databases;</div><div class="line"></div><div class="line">mysql&gt;use mysql;</div><div class="line"></div><div class="line">mysql&gt;UPDATE user SET password=PASSWORD(&quot;root&quot;) WHERE user=&apos;root&apos;;</div><div class="line"></div><div class="line">mysql&gt;FLUSH PRIVILEGES;</div><div class="line"></div><div class="line">mysql&gt;QUIT</div></pre></td></tr></table></figure>
-</li>
-<li><p>MySQL控制台快捷方式建立:</p>
-<p> 1）桌面右键-&gt;新建-&gt;快捷方式-&gt;对象位置输入：<code>C:\Windows\System32\cmd.exe</code></p>
-<p> 快捷方式名称自己定义，确定，快捷方式建立成功</p>
-<p> 2）右键单击刚才建立的快捷方式-&gt;属性-&gt;把目标一栏修改成MySQL启动参数：</p>
-<p> C:\Windows\System32\cmd.exe “D:\MapleDev\DevProgram\mysql-5.7.13-winx64\bin” /k mysql -uroot -proot mysql</p>
-<p> <em>解释:CMD路径 “MySQL路径bin目录” /k mysql -u用户名 -p密码 [数据库名]</em></p>
-<p> 3）修改完成后点击确定保存，直接双击快捷方式即可连接到MySQL数据库</p>
-</li>
-</ol>
-<h2 id="PS："><a href="#PS：" class="headerlink" title="PS："></a>PS：</h2><p>   从 <strong>MySQL5.7</strong> 开始，安装MySQL服务 <code>net start MySQL</code> 提示”请键入 NET     HELPMSG 3534 以获得更多的帮助”的解决办法:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. 先删除data目录下的所有文件或者移走（初次解压没有data请忽略此步骤）。</div><div class="line">2. mysqld --initialize (初始化 data 并生成随机密码 or)   </div><div class="line">   mysqld --initialize-insecure (初始化 data，不生成随机密码)</div><div class="line">3. net start mysql</div><div class="line">4. C:\Users\Administrator&gt; mysql -uroot -p默认密码 （默认密码在新生成的 data 文件夹下的 您的计算机名.err 中，eg：_2016-07-13T10:50:57.082079Z 1 [Note] A temporary password is generated for root@localhost: T*1ng)#e2f_k_</div><div class="line">5. 修改密码：mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;root&apos;;</div></pre></td></tr></table></figure>
-<h2 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h2><ol>
-<li>MySQL 官方文档：<a href="http://dev.mysql.com/doc/refman/5.7/en/data-directory-initialization-mysqld.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.7/en/data-directory-initialization-mysqld.html</a></li>
-</ol>
+</ul>
+<p>可以看到，我们用的曲线就是先使用了原生的<code>JSONObject</code>取出posts key的String类型的value。另外还需注意的一点就是：jsonStr反序列化（这次是gson官方文档）List应使用<code>TypeToken</code>，直接上<code>XXbean.class</code>是不行的。</p>
+<h2 id="感谢："><a href="#感谢：" class="headerlink" title="感谢："></a>感谢：</h2><ul>
+<li>API文档 - 看知乎 - <a href="http://www.kanzhihu.com/api-document" target="_blank" rel="external">http://www.kanzhihu.com/api-document</a></li>
+<li>小梅梅</li>
+</ul>
 
       
     </div>
@@ -469,22 +428,24 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JSON/" rel="tag">#JSON</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/13/Android-坑神/" rel="next" title="Android 坑神">
-                <i class="fa fa-chevron-left"></i> Android 坑神
+              <a href="/2016/07/31/「懒人周末」抓包分析/" rel="next" title="「懒人周末」抓包分析">
+                <i class="fa fa-chevron-left"></i> 「懒人周末」抓包分析
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/17/泛型的使用（小白向）/" rel="prev" title="泛型的使用（小白向）">
-                泛型的使用（小白向） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,10 +460,10 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/07/14/MySQL-免安装版-配置方法/"
-     data-title="MySQL 免安装版 配置方法"
+        <div class="ds-share flat" data-thread-key="2016/08/03/Gson不能解析出String？/"
+     data-title="Gson不能解析出String？"
      data-content=""
-     data-url="https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/">
+     data-url="https://mapledev.github.io/2016/08/03/Gson不能解析出String？/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -529,8 +490,8 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/14/MySQL-免安装版-配置方法/"
-           data-title="MySQL 免安装版 配置方法" data-url="https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/">
+      <div class="ds-thread" data-thread-key="2016/08/03/Gson不能解析出String？/"
+           data-title="Gson不能解析出String？" data-url="https://mapledev.github.io/2016/08/03/Gson不能解析出String？/">
       </div>
     
   </div>
@@ -671,7 +632,7 @@ D:\MapleDev\DevProgram\mysql-5.7.13-winx64">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装步骤："><span class="nav-number">1.</span> <span class="nav-text">安装步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS："><span class="nav-number">2.</span> <span class="nav-text">PS：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference："><span class="nav-number">3.</span> <span class="nav-text">Reference：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先上答案：不能。"><span class="nav-number">1.</span> <span class="nav-text">首先上答案：不能。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题的引出"><span class="nav-number">2.</span> <span class="nav-text">问题的引出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢："><span class="nav-number">3.</span> <span class="nav-text">感谢：</span></a></li></ol></div>
             
           </div>
         </section>
