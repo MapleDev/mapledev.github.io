@@ -34,50 +34,6 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
@@ -118,7 +74,7 @@ Flag立的飞起。劝君莫装13，会还的。。。">
 有空补一个 泛型应用在 JSON 解析时的栗子。
 
 Flag立的飞起。劝君莫装13，会还的。。。">
-<meta property="og:updated_time" content="2016-07-19T05:34:58.567Z">
+<meta property="og:updated_time" content="2016-08-01T12:14:35.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="今天不宜撸代码----泛型擦除，我记住你了">
 <meta name="twitter:description" content="昨天还说：
@@ -246,16 +202,6 @@ Flag立的飞起。劝君莫装13，会还的。。。">
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
           </a>
         </li>
       
@@ -408,7 +354,8 @@ Flag立的飞起。劝君莫装13，会还的。。。">
 <li><p>so 当运行时 <code>RstLoginBean rstLoginBean = rstBeans.get(0);</code> 时悲剧发生了：<br><code>java.lang.ClassCastException: com.google.gson.internal.LinkedTreeMap cannot be cast to com.xznn.xzmall.bean.RstLoginBean</code><br>而 IDE 不会报任何错误。（注意 <code>LinkedTreeMap</code> cast to <code>RstLoginBean</code>）</p>
 </li>
 </ol>
-<h2 id="喜闻乐见好人做好的轮子："><a href="#喜闻乐见好人做好的轮子：" class="headerlink" title="喜闻乐见好人做好的轮子："></a>喜闻乐见好人做好的轮子：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@author</span> MapleDev</div><div class="line">     * <span class="doctag">@time</span> 16/07/19  21:22</div><div class="line">     * <span class="doctag">@desc</span> 将 JSON String 转化成 List&lt;T&gt;</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">ArrayList&lt;T&gt; <span class="title">json2List</span><span class="params">(String json, Class&lt;T&gt; classOfT)</span> </span>&#123;</div><div class="line">        <span class="comment">// 先反序列化出ArrayList&lt;JsonObject&gt;</span></div><div class="line">        Gson gson = <span class="keyword">new</span> Gson();</div><div class="line">        Type type = <span class="keyword">new</span> TypeToken&lt;ArrayList&lt;JsonObject&gt;&gt;()&#123;&#125;.getType();</div><div class="line">        ArrayList&lt;JsonObject&gt; jsonObjs = gson.fromJson(json, type);</div><div class="line">        <span class="comment">// 然后在一个个的把JsonObject转成classOfT类型的对象</span></div><div class="line">        ArrayList&lt;T&gt; listOfT = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">for</span> (JsonObject jsonObj : jsonObjs) &#123;</div><div class="line">            listOfT.add(gson.fromJson(jsonObj, classOfT));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> listOfT;</div><div class="line">    &#125;</div><div class="line">``` </div><div class="line">OR 更简洁的写法：</div><div class="line">``` java</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@author</span> MapleDev</div><div class="line">     * <span class="doctag">@time</span> 16/07/19  21:32</div><div class="line">     * <span class="doctag">@desc</span> 将 JSON String 转化成 List&lt;T&gt;</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">json2List</span><span class="params">(String json, Class&lt;T&gt; clazz)</span> </span>&#123;</div><div class="line">        List&lt;T&gt; lst = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">        JsonArray array = <span class="keyword">new</span> JsonParser().parse(json).getAsJsonArray();</div><div class="line">        <span class="keyword">for</span> (JsonElement elem : array) &#123;</div><div class="line">            lst.add(<span class="keyword">new</span> Gson().fromJson(elem, clazz));</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> lst;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="喜闻乐见好人做好的轮子："><a href="#喜闻乐见好人做好的轮子：" class="headerlink" title="喜闻乐见好人做好的轮子："></a>喜闻乐见好人做好的轮子：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> MapleDev</div><div class="line"> * <span class="doctag">@time</span> 16/07/19  21:22</div><div class="line"> * <span class="doctag">@desc</span> 将 JSON String 转化成 List&lt;T&gt;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">ArrayList&lt;T&gt; <span class="title">json2List</span><span class="params">(String json, Class&lt;T&gt; classOfT)</span> </span>&#123;</div><div class="line">    <span class="comment">// 先反序列化出ArrayList&lt;JsonObject&gt;</span></div><div class="line">    Gson gson = <span class="keyword">new</span> Gson();</div><div class="line">    Type type = <span class="keyword">new</span> TypeToken&lt;ArrayList&lt;JsonObject&gt;&gt;()&#123;&#125;.getType();</div><div class="line">    ArrayList&lt;JsonObject&gt; jsonObjs = gson.fromJson(json, type);</div><div class="line">    <span class="comment">// 然后在一个个的把JsonObject转成classOfT类型的对象</span></div><div class="line">    ArrayList&lt;T&gt; listOfT = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    <span class="keyword">for</span> (JsonObject jsonObj : jsonObjs) &#123;</div><div class="line">        listOfT.add(gson.fromJson(jsonObj, classOfT));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> listOfT;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>or 更简洁的写法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> MapleDev</div><div class="line"> * <span class="doctag">@time</span> 16/07/19  21:32</div><div class="line"> * <span class="doctag">@desc</span> 将 JSON String 转化成 List&lt;T&gt;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">json2List</span><span class="params">(String json, Class&lt;T&gt; clazz)</span> </span>&#123;</div><div class="line">    List&lt;T&gt; lst = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    JsonArray array = <span class="keyword">new</span> JsonParser().parse(json).getAsJsonArray();</div><div class="line">    <span class="keyword">for</span> (JsonElement elem : array) &#123;</div><div class="line">        lst.add(<span class="keyword">new</span> Gson().fromJson(elem, clazz));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> lst;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="http://blog.csdn.net/zxhoo/article/details/34856061" target="_blank" rel="external">GSON使用笔记（3） – 如何反序列化出List - zxh的专栏 - 博客频道 - CSDN.NET:</a></li>
 </ul>
@@ -514,9 +461,6 @@ Flag立的飞起。劝君莫装13，会还的。。。">
 
           </div>
           
-
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
 
 
           
