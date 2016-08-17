@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[开源中国Android客户端，走你~~~]]></title>
-      <url>https://mapledev.github.io/2016/08/17/%E5%BC%80%E6%BA%90%E4%B8%AD%E5%9B%BDAndroid%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E8%B5%B0%E4%BD%A0~~~/</url>
+      <url>https://mapledev.github.io/2016/08/17/%E5%BC%80%E6%BA%90%E4%B8%AD%E5%9B%BDAndroid%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E8%B5%B0%E4%BD%A0/</url>
       <content type="html"><![CDATA[<p>许久未更，罪过，罪过。。。</p>
 <p>今天从开源中国下载<a href="https://git.oschina.net/oschina/android-app" target="_blank" rel="external">开源中国Android客户端</a>,从下载到运行到处充满了坑，记录一下：</p>
 <h4 id="下载下来只有-git"><a href="#下载下来只有-git" class="headerlink" title="下载下来只有 .git"></a>下载下来只有 .git</h4><p>人与人最基本的信任呢？不要捉急，只需在 terminal 中键入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone http://git.oschina.net/oschina/android-app</div><div class="line">cd android-app</div><div class="line">git tag</div><div class="line">git checkout -b v2.x.x v2.x.x</div></pre></td></tr></table></figure></p>
