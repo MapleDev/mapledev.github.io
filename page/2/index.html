@@ -300,6 +300,380 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/17/开源中国Android客户端，走你/" itemprop="url">
+                  开源中国Android客户端，走你~~~
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-17T21:25:45+08:00" content="2016-08-17">
+              2016-08-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/17/开源中国Android客户端，走你/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/开源中国Android客户端，走你/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>许久未更，罪过，罪过。。。</p>
+<p>今天从开源中国下载<a href="https://git.oschina.net/oschina/android-app">开源中国Android客户端</a>,从下载到运行到处充满了坑，记录一下：</p>
+<h4 id="下载下来只有-git"><a href="#下载下来只有-git" class="headerlink" title="下载下来只有 .git"></a>下载下来只有 .git</h4><p>人与人最基本的信任呢？不要捉急，只需在 terminal 中键入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone http://git.oschina.net/oschina/android-app</div><div class="line">cd android-app</div><div class="line">git tag</div><div class="line">git checkout -b v2.x.x v2.x.x</div></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/17/开源中国Android客户端，走你/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/03/Gson不能解析出String？/" itemprop="url">
+                  Gson不能解析出String？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-03T19:39:46+08:00" content="2016-08-03">
+              2016-08-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/03/Gson不能解析出String？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/03/Gson不能解析出String？/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="首先上答案：不能。"><a href="#首先上答案：不能。" class="headerlink" title="首先上答案：不能。"></a>首先上答案：不能。</h2><p>但是我们可以曲线救国。</p>
+<h2 id="问题的引出"><a href="#问题的引出" class="headerlink" title="问题的引出"></a>问题的引出</h2><p>在做「看看知乎」App式需要解析如下 JsonString：<br>url：<code>http://api.kanzhihu.com/getposts</code></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/03/Gson不能解析出String？/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/31/「懒人周末」抓包分析/" itemprop="url">
+                  「懒人周末」抓包分析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-31T14:57:20+08:00" content="2016-07-31">
+              2016-07-31
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/31/「懒人周末」抓包分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/31/「懒人周末」抓包分析/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>声明：谨学习使用，侵删。<br><strong><em>注意，使用火狐麻麻再也不要担心我403啦～～</em></strong></p>
+<h2 id="获取城市信息："><a href="#获取城市信息：" class="headerlink" title="获取城市信息："></a>获取城市信息：</h2><ul>
+<li>url:<br><a href="http://api.lanrenzhoumo.com/other/common/ip_location?session_id=0000405fbe3a2aa32e2387655fa54ac8d5a4f9">http://api.lanrenzhoumo.com/other/common/ip_location?session_id=0000405fbe3a2aa32e2387655fa54ac8d5a4f9</a></li>
+<li>返回：<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"append_info"</span>: &#123;&#125;,</div><div class="line">    <span class="attr">"msg"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"result"</span>: &#123;</div><div class="line">        <span class="attr">"cityId"</span>: <span class="number">80</span>,</div><div class="line">        <span class="attr">"cityName"</span>: <span class="string">"广州"</span>,</div><div class="line">        <span class="attr">"lat"</span>: <span class="number">23.11389984794918</span>,</div><div class="line">        <span class="attr">"lon"</span>: <span class="number">113.30119382532787</span>,</div><div class="line">        <span class="attr">"provinceId"</span>: <span class="number">6</span>,</div><div class="line">        <span class="attr">"provinceName"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"status"</span>: <span class="number">200</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/31/「懒人周末」抓包分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/27/ResultReceiver在IntentService中的使用/" itemprop="url">
                   ResultReceiver在IntentService中的使用
                 </a>
@@ -531,388 +905,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/20/随想/" itemprop="url">
-                  随想
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-20T22:18:07+08:00" content="2016-07-20">
-              2016-07-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/20/随想/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/20/随想/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="今天一天是普通的一天，也是我一生中唯一的-2016-07-20"><a href="#今天一天是普通的一天，也是我一生中唯一的-2016-07-20" class="headerlink" title="今天一天是普通的一天，也是我一生中唯一的 2016-07-20"></a>今天一天是普通的一天，也是我一生中唯一的 2016-07-20</h2><p>时间的重要性不用再提，可是我想在这检讨自己，总是不能珍惜时间。把时间多花在有意义的地方。那什么地方是有意义呢？我想应该是：</p>
-<ul>
-<li>站在长长的时间维度上，多想想。</li>
-<li>站在大大的空间维度上，多想想。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/" itemprop="url">
-                  今天不宜撸代码----泛型擦除，我记住你了
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:03:19+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>昨天还说：</p>
-<blockquote>
-<p>有空补一个 泛型应用在 JSON 解析时的栗子。</p>
-</blockquote>
-<p>Flag立的飞起。劝君莫装13，会还的。。。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/17/泛型的使用（小白向）/" itemprop="url">
-                  泛型的使用（小白向）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-17T11:34:43+08:00" content="2016-07-17">
-              2016-07-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/17/泛型的使用（小白向）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/17/泛型的使用（小白向）/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话"><a href="#说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话" class="headerlink" title="说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话"></a>说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话</h2><blockquote>
-<p>豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。</p>
-</blockquote>
-<p>泛型从 Java 1.5 引进，麻麻再也不用担心我 <strong> 强转类型 </strong> 了。但是，万恶的但是啊。泛型的引入对代码的可读性造成成吨的伤害。</p>
-<p>泛型是什么。我就不一一解释（其实也说得不好），大家自行搜索。</p>
-<p>在这我就说说泛型怎么吃好了 &gt;_&lt;</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/17/泛型的使用（小白向）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -953,7 +950,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -961,7 +958,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1033,7 +1030,7 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.dhelf.cn/" title="葉十二" target="_blank">葉十二</a>
+                  <a href="https://www.jianshu.com/u/2a019b2d2bc1" title="我的简书" target="_blank">我的简书</a>
                 </li>
               
             </ul>
