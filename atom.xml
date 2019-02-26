@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mapledev.github.io/"/>
-  <updated>2016-08-17T14:55:01.873Z</updated>
+  <updated>2019-02-26T06:07:18.991Z</updated>
   <id>https://mapledev.github.io/</id>
   
   <author>
@@ -16,11 +16,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="https://mapledev.github.io/2019/02/26/test/"/>
+    <id>https://mapledev.github.io/2019/02/26/test/</id>
+    <published>2019-02-26T06:07:18.000Z</published>
+    <updated>2019-02-26T06:07:18.991Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;感谢：&quot;&gt;&lt;a href=&quot;#感谢：&quot; class=&quot;headerlink&quot; title=&quot;感谢：&quot;&gt;&lt;/a&gt;感谢：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;感谢：&quot;&gt;&lt;a href=&quot;#感谢：&quot; class=&quot;headerlink&quot; title=&quot;感谢：&quot;&gt;&lt;/a&gt;感谢：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+    
+    </summary>
+    
+      <category term="未分类" scheme="https://mapledev.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://mapledev.github.io/2019/02/25/hello-world/"/>
+    <id>https://mapledev.github.io/2019/02/25/hello-world/</id>
+    <published>2019-02-25T15:21:17.566Z</published>
+    <updated>2016-07-13T05:57:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>开源中国Android客户端，走你~~~</title>
     <link href="https://mapledev.github.io/2016/08/17/%E5%BC%80%E6%BA%90%E4%B8%AD%E5%9B%BDAndroid%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E8%B5%B0%E4%BD%A0/"/>
     <id>https://mapledev.github.io/2016/08/17/开源中国Android客户端，走你/</id>
     <published>2016-08-17T13:25:45.000Z</published>
-    <updated>2016-08-17T14:55:01.873Z</updated>
+    <updated>2016-08-17T14:55:01.000Z</updated>
     
     <content type="html">&lt;p&gt;许久未更，罪过，罪过。。。&lt;/p&gt;
 &lt;p&gt;今天从开源中国下载&lt;a href=&quot;https://git.oschina.net/oschina/android-app&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;开源中国Android客户端&lt;/a&gt;,从下载到运行到处充满了坑，记录一下：&lt;/p&gt;
@@ -65,7 +120,7 @@
     <link href="https://mapledev.github.io/2016/08/03/Gson%E4%B8%8D%E8%83%BD%E8%A7%A3%E6%9E%90%E5%87%BAString%EF%BC%9F/"/>
     <id>https://mapledev.github.io/2016/08/03/Gson不能解析出String？/</id>
     <published>2016-08-03T11:39:46.000Z</published>
-    <updated>2016-08-03T12:19:29.226Z</updated>
+    <updated>2016-08-03T12:19:29.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;首先上答案：不能。&quot;&gt;&lt;a href=&quot;#首先上答案：不能。&quot; class=&quot;headerlink&quot; title=&quot;首先上答案：不能。&quot;&gt;&lt;/a&gt;首先上答案：不能。&lt;/h2&gt;&lt;p&gt;但是我们可以曲线救国。&lt;/p&gt;
 &lt;h2 id=&quot;问题的引出&quot;&gt;&lt;a href=&quot;#问题的引出&quot; class=&quot;headerlink&quot; title=&quot;问题的引出&quot;&gt;&lt;/a&gt;问题的引出&lt;/h2&gt;&lt;p&gt;在做「看看知乎」App式需要解析如下 JsonString：&lt;br&gt;url：&lt;code&gt;http://api.kanzhihu.com/getposts&lt;/code&gt;&lt;/p&gt;
@@ -108,7 +163,7 @@
     <link href="https://mapledev.github.io/2016/07/31/%E3%80%8C%E6%87%92%E4%BA%BA%E5%91%A8%E6%9C%AB%E3%80%8D%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/"/>
     <id>https://mapledev.github.io/2016/07/31/「懒人周末」抓包分析/</id>
     <published>2016-07-31T06:57:20.000Z</published>
-    <updated>2016-08-03T11:37:54.088Z</updated>
+    <updated>2016-08-03T11:37:54.000Z</updated>
     
     <content type="html">&lt;p&gt;声明：谨学习使用，侵删。&lt;br&gt;&lt;strong&gt;&lt;em&gt;注意，使用火狐麻麻再也不要担心我403啦～～&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;获取城市信息：&quot;&gt;&lt;a href=&quot;#获取城市信息：&quot; class=&quot;headerlink&quot; title=&quot;获取城市信息：&quot;&gt;&lt;/a&gt;获取城市信息：&lt;/h2&gt;&lt;ul&gt;
@@ -155,7 +210,7 @@
     <link href="https://mapledev.github.io/2016/07/27/ResultReceiver%E5%9C%A8IntentService%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>https://mapledev.github.io/2016/07/27/ResultReceiver在IntentService中的使用/</id>
     <published>2016-07-27T10:00:22.000Z</published>
-    <updated>2016-07-27T12:00:41.463Z</updated>
+    <updated>2016-07-27T12:00:41.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;想回去通风报信，没那么简单，就能…&quot;&gt;&lt;a href=&quot;#想回去通风报信，没那么简单，就能…&quot; class=&quot;headerlink&quot; title=&quot;想回去通风报信，没那么简单，就能…&quot;&gt;&lt;/a&gt;想回去通风报信，没那么简单，就能…&lt;/h2&gt;&lt;p&gt;IntentService使用很方便，但是想在 IntentService 返回一个 String 回 Act 就有点麻烦了。简单的回调方法对于 IntentService 是无效的。因为 IntentService 是新开的一个进程，涉及到了IPC。可以想到的方法：&lt;/p&gt;
 &lt;ol&gt;
@@ -201,7 +256,7 @@
     <link href="https://mapledev.github.io/2016/07/25/%E6%80%9D%E6%83%B3%E6%B1%87%E6%8A%A5/"/>
     <id>https://mapledev.github.io/2016/07/25/思想汇报/</id>
     <published>2016-07-25T14:07:54.000Z</published>
-    <updated>2016-07-25T14:20:59.276Z</updated>
+    <updated>2016-07-25T14:20:59.000Z</updated>
     
     <content type="html">&lt;p&gt;反正这也没有什么人，就随便写点吧。&lt;br&gt;转眼五天过去了，没有更新。发现我有这毛病：&lt;/p&gt;
 &lt;ul&gt;
@@ -231,7 +286,7 @@
     <link href="https://mapledev.github.io/2016/07/20/%E9%9A%8F%E6%83%B3/"/>
     <id>https://mapledev.github.io/2016/07/20/随想/</id>
     <published>2016-07-20T14:18:07.000Z</published>
-    <updated>2016-07-25T14:08:31.760Z</updated>
+    <updated>2016-07-25T14:08:31.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;今天一天是普通的一天，也是我一生中唯一的-2016-07-20&quot;&gt;&lt;a href=&quot;#今天一天是普通的一天，也是我一生中唯一的-2016-07-20&quot; class=&quot;headerlink&quot; title=&quot;今天一天是普通的一天，也是我一生中唯一的 2016-07-20&quot;&gt;&lt;/a&gt;今天一天是普通的一天，也是我一生中唯一的 2016-07-20&lt;/h2&gt;&lt;p&gt;时间的重要性不用再提，可是我想在这检讨自己，总是不能珍惜时间。把时间多花在有意义的地方。那什么地方是有意义呢？我想应该是：&lt;/p&gt;
 &lt;ul&gt;
@@ -256,7 +311,7 @@
     <link href="https://mapledev.github.io/2016/07/18/%E4%BB%8A%E5%A4%A9%E4%B8%8D%E5%AE%9C%E6%92%B8%E4%BB%A3%E7%A0%81----%E6%B3%9B%E5%9E%8B%E6%93%A6%E9%99%A4%EF%BC%8C%E6%88%91%E8%AE%B0%E4%BD%8F%E4%BD%A0%E4%BA%86/"/>
     <id>https://mapledev.github.io/2016/07/18/今天不宜撸代码----泛型擦除，我记住你了/</id>
     <published>2016-07-18T14:03:19.000Z</published>
-    <updated>2016-08-01T12:14:35.473Z</updated>
+    <updated>2016-08-01T12:14:35.000Z</updated>
     
     <content type="html">&lt;p&gt;昨天还说：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -309,7 +364,7 @@
     <link href="https://mapledev.github.io/2016/07/17/%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E5%B0%8F%E7%99%BD%E5%90%91%EF%BC%89/"/>
     <id>https://mapledev.github.io/2016/07/17/泛型的使用（小白向）/</id>
     <published>2016-07-17T03:34:43.000Z</published>
-    <updated>2016-07-18T15:37:43.479Z</updated>
+    <updated>2016-07-18T15:37:43.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话&quot;&gt;&lt;a href=&quot;#说起泛型，小白大多是一脸懵逼。引用我-Java-的启蒙老师马士兵的话&quot; class=&quot;headerlink&quot; title=&quot;说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话&quot;&gt;&lt;/a&gt;说起泛型，小白大多是一脸懵逼。引用我 Java 的启蒙老师马士兵的话&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;豆芽菜长一房高，它也是一根菜！咋们把他摘（二声）了就不行了。&lt;/p&gt;
@@ -354,7 +409,7 @@
     <link href="https://mapledev.github.io/2016/07/14/MySQL-%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88-%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/"/>
     <id>https://mapledev.github.io/2016/07/14/MySQL-免安装版-配置方法/</id>
     <published>2016-07-14T06:33:13.000Z</published>
-    <updated>2016-07-17T13:32:17.662Z</updated>
+    <updated>2016-07-17T13:32:17.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;安装步骤：&quot;&gt;&lt;a href=&quot;#安装步骤：&quot; class=&quot;headerlink&quot; title=&quot;安装步骤：&quot;&gt;&lt;/a&gt;安装步骤：&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;下载MySQL Community Server &lt;a href=&quot;http://dev.mysql.com/downloads/mysql/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dev.mysql.com/downloads/mysql/&lt;/a&gt;&lt;/p&gt;
@@ -426,10 +481,52 @@
   
   <entry>
     <title>Android 坑神</title>
+    <link href="https://mapledev.github.io/2016/07/13/mkdirs()-%E6%80%BB%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%8C%E5%A4%9A%E5%8D%8A---/"/>
+    <id>https://mapledev.github.io/2016/07/13/mkdirs()-总失败，怎么办，多半---/</id>
+    <published>2016-07-13T12:53:30.000Z</published>
+    <updated>2019-02-26T06:18:04.615Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1162834-eaf26a29b4b4faca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;老家的绿&quot;&gt;&lt;br&gt;今天 2017年3月29日21:24:06 遇到一个创建文件夹的坑，打个Log记录一下。&lt;/p&gt;
+&lt;h3 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h3&gt;&lt;p&gt;在父文件夹下建一文件夹&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;File parentFile = new File(&amp;quot;parentFile&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;File childFile = new File(parentFile, &amp;quot;childFile&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if (!childFile.exists()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    boolean mkdirs = childFile.mkdirs();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Log.d(TAG, &amp;quot;mkdirs = &amp;quot; + mkdirs);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;很简单吧，可mkdirs 总返回false，建立不了，日了个xx&lt;/p&gt;
+&lt;h3 id=&quot;摸索&quot;&gt;&lt;a href=&quot;#摸索&quot; class=&quot;headerlink&quot; title=&quot;摸索&quot;&gt;&lt;/a&gt;摸索&lt;/h3&gt;&lt;p&gt;一步步排查吧&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;权限 ok&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;uses-permission android:name=&amp;quot;android.permission.READ_EXTERNAL_STORAGE&amp;quot; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot; /&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;mkdir&lt;/code&gt; ； &lt;code&gt;mkdirs&lt;/code&gt; 傻傻分不清？&lt;br&gt;简单来说：&lt;code&gt;mkdir&lt;/code&gt;先有爸爸，再有我，慢慢来；&lt;code&gt;mkdirs&lt;/code&gt; 一步到位。&lt;br&gt;这里用 &lt;code&gt;mkdirs&lt;/code&gt; 是没问题的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;多线程，不存在的。&lt;br&gt;如果业务需要考虑多线程的情况，不要担心，一 &lt;code&gt;synchronized&lt;/code&gt; 下去还让你皮。&lt;/li&gt;
+&lt;li&gt;还是不行，考虑下同名的问题。&lt;br&gt;怎么说：坑就这这里，有些文件夹并不是你看不见了他就不存在了。代码才是验证真理的唯一标准：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;boolean parentFileExists = parentFile.exists();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Log.d(TAG, &amp;quot;parentFileExists = &amp;quot; + parentFileExists);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;验证下父文件夹是否存在，有时因为各种原因，磁盘中已有了&lt;code&gt;parentFile&lt;/code&gt;，但是不可见。&lt;/p&gt;
+&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;如果父文件夹存在，手气刀落，删了。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;File parentFile = new File(&amp;quot;parentFile&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;File childFile = new File(parentFile, &amp;quot;childFile&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if (!childFile.exists()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    boolean mkdirs = childFile.mkdirs();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Log.d(TAG, &amp;quot;mkdirs = &amp;quot; + mkdirs);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    if(!mkdirs) &amp;#123; // 如果 建立文件夹失败 将父文件夹删除&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(parentFile.exists()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            parentFile.delete();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;ps：我这里业务是这样的，代码是死的，您的思想是活的。&lt;br&gt;欢迎斧正，交流。O(∩_∩)O谢谢&lt;/p&gt;
+&lt;h3 id=&quot;补充&quot;&gt;&lt;a href=&quot;#补充&quot; class=&quot;headerlink&quot; title=&quot;补充&quot;&gt;&lt;/a&gt;补充&lt;/h3&gt;&lt;p&gt;2017年3月30日20:55:28：&lt;br&gt;还有个方法，事先判断 ta 的父文件夹是否存在&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;File parentFile = new File(&amp;quot;parentFile&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;File childFile = new File(parentFile, &amp;quot;childFile&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if (!childFile .getParentFile().exists()) &amp;#123; // 事先判断 ta 的父文件夹是否存在&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    boolean mkdirs = childFile .getParentFile().mkdirs();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Log.w(TAG, &amp;quot;SDCardUtil&amp;#123;&amp;#125; ... makedirs() --&amp;gt; file = &amp;quot; + file.getParentFile().getAbsolutePath() + &amp;quot; ;mkdirs = &amp;quot; + mkdirs);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if (!childFile.exists()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    boolean mkdirs = childFile.mkdirs();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Log.d(TAG, &amp;quot;mkdirs = &amp;quot; + mkdirs);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    if(!mkdirs) &amp;#123; // 如果 建立文件夹失败 将父文件夹删除&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(parentFile.exists()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            parentFile.delete();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;补充2&quot;&gt;&lt;a href=&quot;#补充2&quot; class=&quot;headerlink&quot; title=&quot;补充2&quot;&gt;&lt;/a&gt;补充2&lt;/h3&gt;&lt;p&gt;2017年3月31日09:39:29&lt;br&gt;在 stackoverflow 发现这样一个问答，很有启发：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;android - “Result of method is ignored”- what does this imply? - Stack Overflow - &lt;a href=&quot;http://stackoverflow.com/questions/38967366/result-of-method-is-ignored-what-does-this-imply&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/38967366/result-of-method-is-ignored-what-does-this-imply&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1162834-eaf26a29b4b4faca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
+    
+    </summary>
+    
+      <category term="Android" scheme="https://mapledev.github.io/categories/Android/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android 坑神</title>
     <link href="https://mapledev.github.io/2016/07/13/Android-%E5%9D%91%E7%A5%9E/"/>
     <id>https://mapledev.github.io/2016/07/13/Android-坑神/</id>
     <published>2016-07-13T12:53:30.000Z</published>
-    <updated>2016-07-17T13:33:02.119Z</updated>
+    <updated>2016-07-17T13:33:02.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;a href=&quot;#ListView中使用type需要注意的东西&quot; class=&quot;headerlink&quot; title=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;/a&gt;ListView中使用type需要注意的东西&lt;/h2&gt;&lt;p&gt;在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_LOAD_MORE = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 切记 ViewType 从 0 开始&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_NORMAL = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -456,7 +553,7 @@
     <link href="https://mapledev.github.io/2016/07/13/Android-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%81%E6%91%98%E8%A6%81/"/>
     <id>https://mapledev.github.io/2016/07/13/Android-学习笔记、摘要/</id>
     <published>2016-07-13T12:51:52.000Z</published>
-    <updated>2016-07-17T13:35:16.692Z</updated>
+    <updated>2016-07-17T13:35:16.000Z</updated>
     
     <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
     
@@ -468,33 +565,6 @@
     
     
       <category term="Android" scheme="https://mapledev.github.io/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://mapledev.github.io/2016/07/13/hello-world/"/>
-    <id>https://mapledev.github.io/2016/07/13/hello-world/</id>
-    <published>2016-07-13T05:57:51.567Z</published>
-    <updated>2016-07-13T05:57:51.573Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   

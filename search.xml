@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[test]]></title>
+      <url>https://mapledev.github.io/2019/02/26/test/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="感谢："><a href="#感谢：" class="headerlink" title="感谢："></a>感谢：</h2><ul>
+<li></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>https://mapledev.github.io/2019/02/25/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[开源中国Android客户端，走你~~~]]></title>
       <url>https://mapledev.github.io/2016/08/17/%E5%BC%80%E6%BA%90%E4%B8%AD%E5%9B%BDAndroid%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E8%B5%B0%E4%BD%A0/</url>
       <content type="html"><![CDATA[<p>许久未更，罪过，罪过。。。</p>
@@ -244,6 +269,34 @@
     
     <entry>
       <title><![CDATA[Android 坑神]]></title>
+      <url>https://mapledev.github.io/2016/07/13/mkdirs()-%E6%80%BB%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%8C%E5%A4%9A%E5%8D%8A---/</url>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1162834-eaf26a29b4b4faca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="老家的绿"><br>今天 2017年3月29日21:24:06 遇到一个创建文件夹的坑，打个Log记录一下。</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>在父文件夹下建一文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">File parentFile = new File(&quot;parentFile&quot;);</div><div class="line">File childFile = new File(parentFile, &quot;childFile&quot;);</div><div class="line">if (!childFile.exists()) &#123;</div><div class="line">    boolean mkdirs = childFile.mkdirs();</div><div class="line">    Log.d(TAG, &quot;mkdirs = &quot; + mkdirs);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>很简单吧，可mkdirs 总返回false，建立不了，日了个xx</p>
+<h3 id="摸索"><a href="#摸索" class="headerlink" title="摸索"></a>摸索</h3><p>一步步排查吧</p>
+<ol>
+<li><p>权限 ok</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;</div><div class="line">&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>mkdir</code> ； <code>mkdirs</code> 傻傻分不清？<br>简单来说：<code>mkdir</code>先有爸爸，再有我，慢慢来；<code>mkdirs</code> 一步到位。<br>这里用 <code>mkdirs</code> 是没问题的。</p>
+</li>
+<li>多线程，不存在的。<br>如果业务需要考虑多线程的情况，不要担心，一 <code>synchronized</code> 下去还让你皮。</li>
+<li>还是不行，考虑下同名的问题。<br>怎么说：坑就这这里，有些文件夹并不是你看不见了他就不存在了。代码才是验证真理的唯一标准：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">boolean parentFileExists = parentFile.exists();</div><div class="line">Log.d(TAG, &quot;parentFileExists = &quot; + parentFileExists);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>验证下父文件夹是否存在，有时因为各种原因，磁盘中已有了<code>parentFile</code>，但是不可见。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>如果父文件夹存在，手气刀落，删了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">File parentFile = new File(&quot;parentFile&quot;);</div><div class="line">File childFile = new File(parentFile, &quot;childFile&quot;);</div><div class="line">if (!childFile.exists()) &#123;</div><div class="line">    boolean mkdirs = childFile.mkdirs();</div><div class="line">    Log.d(TAG, &quot;mkdirs = &quot; + mkdirs);</div><div class="line">    if(!mkdirs) &#123; // 如果 建立文件夹失败 将父文件夹删除</div><div class="line">        if(parentFile.exists()) &#123;</div><div class="line">            parentFile.delete();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>ps：我这里业务是这样的，代码是死的，您的思想是活的。<br>欢迎斧正，交流。O(∩_∩)O谢谢</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>2017年3月30日20:55:28：<br>还有个方法，事先判断 ta 的父文件夹是否存在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">File parentFile = new File(&quot;parentFile&quot;);</div><div class="line">File childFile = new File(parentFile, &quot;childFile&quot;);</div><div class="line">if (!childFile .getParentFile().exists()) &#123; // 事先判断 ta 的父文件夹是否存在</div><div class="line">    boolean mkdirs = childFile .getParentFile().mkdirs();</div><div class="line">    Log.w(TAG, &quot;SDCardUtil&#123;&#125; ... makedirs() --&gt; file = &quot; + file.getParentFile().getAbsolutePath() + &quot; ;mkdirs = &quot; + mkdirs);</div><div class="line">&#125;</div><div class="line">if (!childFile.exists()) &#123;</div><div class="line">    boolean mkdirs = childFile.mkdirs();</div><div class="line">    Log.d(TAG, &quot;mkdirs = &quot; + mkdirs);</div><div class="line">    if(!mkdirs) &#123; // 如果 建立文件夹失败 将父文件夹删除</div><div class="line">        if(parentFile.exists()) &#123;</div><div class="line">            parentFile.delete();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="补充2"><a href="#补充2" class="headerlink" title="补充2"></a>补充2</h3><p>2017年3月31日09:39:29<br>在 stackoverflow 发现这样一个问答，很有启发：</p>
+<ul>
+<li>android - “Result of method is ignored”- what does this imply? - Stack Overflow - <a href="http://stackoverflow.com/questions/38967366/result-of-method-is-ignored-what-does-this-imply" target="_blank" rel="external">http://stackoverflow.com/questions/38967366/result-of-method-is-ignored-what-does-this-imply</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android 坑神]]></title>
       <url>https://mapledev.github.io/2016/07/13/Android-%E5%9D%91%E7%A5%9E/</url>
       <content type="html"><![CDATA[<h2 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h2><p>在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_LOAD_MORE = <span class="number">0</span>; <span class="comment">// 切记 ViewType 从 0 开始</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_NORMAL = <span class="number">1</span>;</div></pre></td></tr></table></figure>
@@ -258,21 +311,6 @@
       <title><![CDATA[Android 学习笔记、摘要]]></title>
       <url>https://mapledev.github.io/2016/07/13/Android-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%81%E6%91%98%E8%A6%81/</url>
       <content type="html"><![CDATA[<a id="more"></a>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>https://mapledev.github.io/2016/07/13/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
     </entry>
     
   
