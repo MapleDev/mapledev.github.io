@@ -269,18 +269,6 @@
     
     <entry>
       <title><![CDATA[Android 坑神]]></title>
-      <url>https://mapledev.github.io/2016/07/13/Android-%E5%9D%91%E7%A5%9E/</url>
-      <content type="html"><![CDATA[<h2 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h2><p>在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_LOAD_MORE = <span class="number">0</span>; <span class="comment">// 切记 ViewType 从 0 开始</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_NORMAL = <span class="number">1</span>;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h2><p>忘了在 initView() 中调用</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mViewPager.setOnPageChangeListener(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
-<h2 id="ListView-模拟点击-Item-时"><a href="#ListView-模拟点击-Item-时" class="headerlink" title="ListView 模拟点击 Item 时"></a>ListView 模拟点击 Item 时</h2><p>务必在 mAdapter 初始化完成后执行（一般在 Handler 的 handleMessage(Message msg) {…} 之中）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mTopLv.performItemClick(<span class="keyword">null</span>, <span class="number">0</span>, <span class="number">0</span>);</div></pre></td></tr></table></figure></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Android 坑神]]></title>
       <url>https://mapledev.github.io/2016/07/13/mkdirs()-%E6%80%BB%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%8C%E5%A4%9A%E5%8D%8A---/</url>
       <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1162834-eaf26a29b4b4faca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="老家的绿"><br>今天 2017年3月29日21:24:06 遇到一个创建文件夹的坑，打个Log记录一下。</p>
 <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>在父文件夹下建一文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">File parentFile = new File(&quot;parentFile&quot;);</div><div class="line">File childFile = new File(parentFile, &quot;childFile&quot;);</div><div class="line">if (!childFile.exists()) &#123;</div><div class="line">    boolean mkdirs = childFile.mkdirs();</div><div class="line">    Log.d(TAG, &quot;mkdirs = &quot; + mkdirs);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -304,6 +292,18 @@
 <ul>
 <li>android - “Result of method is ignored”- what does this imply? - Stack Overflow - <a href="http://stackoverflow.com/questions/38967366/result-of-method-is-ignored-what-does-this-imply" target="_blank" rel="external">http://stackoverflow.com/questions/38967366/result-of-method-is-ignored-what-does-this-imply</a></li>
 </ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android 坑神]]></title>
+      <url>https://mapledev.github.io/2016/07/13/Android-%E5%9D%91%E7%A5%9E/</url>
+      <content type="html"><![CDATA[<h2 id="ListView中使用type需要注意的东西"><a href="#ListView中使用type需要注意的东西" class="headerlink" title="ListView中使用type需要注意的东西"></a>ListView中使用type需要注意的东西</h2><p>在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&gt;getItemViewType 否则会有数组越界异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_LOAD_MORE = <span class="number">0</span>; <span class="comment">// 切记 ViewType 从 0 开始</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIEWTYPE_NORMAL = <span class="number">1</span>;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="viewpager-onPageSelected没有执行"><a href="#viewpager-onPageSelected没有执行" class="headerlink" title="viewpager onPageSelected没有执行"></a>viewpager onPageSelected没有执行</h2><p>忘了在 initView() 中调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mViewPager.setOnPageChangeListener(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
+<h2 id="ListView-模拟点击-Item-时"><a href="#ListView-模拟点击-Item-时" class="headerlink" title="ListView 模拟点击 Item 时"></a>ListView 模拟点击 Item 时</h2><p>务必在 mAdapter 初始化完成后执行（一般在 Handler 的 handleMessage(Message msg) {…} 之中）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mTopLv.performItemClick(<span class="keyword">null</span>, <span class="number">0</span>, <span class="number">0</span>);</div></pre></td></tr></table></figure></p>
 ]]></content>
     </entry>
     

@@ -481,33 +481,6 @@
   
   <entry>
     <title>Android 坑神</title>
-    <link href="https://mapledev.github.io/2016/07/13/Android-%E5%9D%91%E7%A5%9E/"/>
-    <id>https://mapledev.github.io/2016/07/13/Android-坑神/</id>
-    <published>2016-07-13T12:53:30.000Z</published>
-    <updated>2016-07-17T13:33:02.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;a href=&quot;#ListView中使用type需要注意的东西&quot; class=&quot;headerlink&quot; title=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;/a&gt;ListView中使用type需要注意的东西&lt;/h2&gt;&lt;p&gt;在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_LOAD_MORE = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 切记 ViewType 从 0 开始&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_NORMAL = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;viewpager-onPageSelected没有执行&quot;&gt;&lt;a href=&quot;#viewpager-onPageSelected没有执行&quot; class=&quot;headerlink&quot; title=&quot;viewpager onPageSelected没有执行&quot;&gt;&lt;/a&gt;viewpager onPageSelected没有执行&lt;/h2&gt;&lt;p&gt;忘了在 initView() 中调用&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mViewPager.setOnPageChangeListener(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;ListView-模拟点击-Item-时&quot;&gt;&lt;a href=&quot;#ListView-模拟点击-Item-时&quot; class=&quot;headerlink&quot; title=&quot;ListView 模拟点击 Item 时&quot;&gt;&lt;/a&gt;ListView 模拟点击 Item 时&lt;/h2&gt;&lt;p&gt;务必在 mAdapter 初始化完成后执行（一般在 Handler 的 handleMessage(Message msg) {…} 之中）&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mTopLv.performItemClick(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;a href=&quot;#ListView中使用type需要注意的东西&quot; class=&quot;headerlink&quot; title=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;/a&gt;ListView中使用type需要注意的东西&lt;/h2&gt;&lt;p&gt;在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_LOAD_MORE = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 切记 ViewType 从 0 开始&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_NORMAL = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="https://mapledev.github.io/categories/Android/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Android 坑神</title>
     <link href="https://mapledev.github.io/2016/07/13/mkdirs()-%E6%80%BB%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%8C%E5%A4%9A%E5%8D%8A---/"/>
     <id>https://mapledev.github.io/2016/07/13/mkdirs()-总失败，怎么办，多半---/</id>
     <published>2016-07-13T12:53:30.000Z</published>
@@ -540,6 +513,33 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1162834-eaf26a29b4b4faca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
+    
+    </summary>
+    
+      <category term="Android" scheme="https://mapledev.github.io/categories/Android/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android 坑神</title>
+    <link href="https://mapledev.github.io/2016/07/13/Android-%E5%9D%91%E7%A5%9E/"/>
+    <id>https://mapledev.github.io/2016/07/13/Android-坑神/</id>
+    <published>2016-07-13T12:53:30.000Z</published>
+    <updated>2016-07-17T13:33:02.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;a href=&quot;#ListView中使用type需要注意的东西&quot; class=&quot;headerlink&quot; title=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;/a&gt;ListView中使用type需要注意的东西&lt;/h2&gt;&lt;p&gt;在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_LOAD_MORE = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 切记 ViewType 从 0 开始&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_NORMAL = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;viewpager-onPageSelected没有执行&quot;&gt;&lt;a href=&quot;#viewpager-onPageSelected没有执行&quot; class=&quot;headerlink&quot; title=&quot;viewpager onPageSelected没有执行&quot;&gt;&lt;/a&gt;viewpager onPageSelected没有执行&lt;/h2&gt;&lt;p&gt;忘了在 initView() 中调用&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mViewPager.setOnPageChangeListener(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;ListView-模拟点击-Item-时&quot;&gt;&lt;a href=&quot;#ListView-模拟点击-Item-时&quot; class=&quot;headerlink&quot; title=&quot;ListView 模拟点击 Item 时&quot;&gt;&lt;/a&gt;ListView 模拟点击 Item 时&lt;/h2&gt;&lt;p&gt;务必在 mAdapter 初始化完成后执行（一般在 Handler 的 handleMessage(Message msg) {…} 之中）&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mTopLv.performItemClick(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;a href=&quot;#ListView中使用type需要注意的东西&quot; class=&quot;headerlink&quot; title=&quot;ListView中使用type需要注意的东西&quot;&gt;&lt;/a&gt;ListView中使用type需要注意的东西&lt;/h2&gt;&lt;p&gt;在使用ListView时，如果使用了getItemViewType， 记得他的值一定要是从0开始计数的。 且要覆盖getViewTypeCount方法。并且让 getViewTypeCount&amp;gt;getItemViewType 否则会有数组越界异常&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_LOAD_MORE = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 切记 ViewType 从 0 开始&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; VIEWTYPE_NORMAL = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
